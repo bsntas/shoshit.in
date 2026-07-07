@@ -187,6 +187,7 @@ a:focus-visible, button:focus-visible{
   aspect-ratio:5/7;
   border-radius:3px 8px 8px 3px;
   padding:1.1rem 1rem 1rem 1.35rem;
+  overflow:hidden;
   color:var(--cream);
   position:relative;
   display:flex; flex-direction:column;
@@ -228,6 +229,8 @@ a:focus-visible, button:focus-visible{
 .cover.c-dochhaya{background:linear-gradient(160deg,#26323c,#161f26);}
 .cover.c-shabda{background:linear-gradient(160deg,#8a5a17,#6a430d);}
 .cover.c-ujyalo{background:linear-gradient(160deg,#5b3a5e,#3f2742);}
+.cover.cover-img{padding:0; background:none;}
+.cover.cover-img img{width:100%; height:100%; object-fit:cover; display:block; border-radius:3px 8px 8px 3px;}
 .book .below{
   font-family:var(--ui); font-size:.9rem; color:var(--ink-soft);
   margin-top:.7rem; line-height:1.5;
