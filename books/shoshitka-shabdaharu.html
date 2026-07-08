@@ -3,8 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>शोषितका शब्दहरू — कविता सङ्ग्रह । मुक्तिनाथ शर्मा 'शोषित'</title>
-<meta name="description" content="'शोषितका शब्दहरू' (२०२५) — मुक्तिनाथ शर्मा 'शोषित'को कविता सङ्ग्रह। ३३ कविताहरूको पूर्ण पाठ।">
+<title>शोषितका शब्दहरू — कविता सङ्ग्रह · मुक्तिनाथ शर्मा 'शोषित'</title>
+<meta name="description" content="'शोषितका शब्दहरू' (२०२५) — मुक्तिनाथ शर्मा 'शोषित'को चौथो कविता सङ्ग्रह। ३३ कविताहरूको पूर्ण पाठ। आमा, बाउ, जिन्दगी, गाउँ र अझ धेरै।">
+
+<!-- Open Graph -->
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="शोषितका शब्दहरू">
+<meta property="og:url" content="https://shoshit.in/books/shoshitka-shabdaharu.html">
+<meta property="og:title" content="शोषितका शब्दहरू — मुक्तिनाथ शर्मा 'शोषित' · कविता सङ्ग्रह २०२५">
+<meta property="og:description" content="'शोषितका शब्दहरू' (२०२५) — ३३ कविताहरूको पूर्ण सङ्ग्रह। आमा-बाउसँगको सम्बन्ध, गाउँजीवन, जिन्दगीको अर्थ र मानवीय संवेदनाहरू।">
+<meta property="og:image" content="https://shoshit.in/images/covers/shoshitka-shabdaharu-cover.png">
+<meta property="og:image:alt" content="Cover of Shoshitka Shabdaharu poetry collection 2025">
+<meta property="og:locale" content="ne_NP">
+<meta property="book:author" content="Muktinath Sharma 'Shoshit'">
+<meta property="book:release_date" content="2025">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="शोषितका शब्दहरू — Muktinath Sharma 'Shoshit' · 33 Poems (2025)">
+<meta name="twitter:description" content="Fourth poetry collection (2025) by Muktinath Sharma 'Shoshit' — 33 Nepali poems on memory, village life, identity and human emotion. Full text at shoshit.in">
+<meta name="twitter:image" content="https://shoshit.in/images/covers/shoshitka-shabdaharu-cover.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://shoshit.in/books/shoshitka-shabdaharu.html">
+
+<!-- JSON-LD: Book -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "शोषितका शब्दहरू",
+  "alternateName": "Shoshitka Shabdaharu",
+  "url": "https://shoshit.in/books/shoshitka-shabdaharu.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://shoshit.in/#author",
+    "name": "Muktinath Sharma 'Shoshit'"
+  },
+  "datePublished": "2025",
+  "inLanguage": "ne",
+  "genre": "Poetry",
+  "description": "Fourth poetry collection featuring 33 poems on themes of family, village life, identity and human emotion.",
+  "image": "https://shoshit.in/images/covers/shoshitka-shabdaharu-cover.png"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Noto+Serif+Devanagari:wght@400;600&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
@@ -13,10 +56,20 @@
 </head>
 <body>
 
+<div id="read-progress" role="progressbar" aria-label="Reading progress"></div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="../index.html">शोषितका शब्दहरू</a>
-    <nav class="site-nav" aria-label="मुख्य">
+    <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation menu">
+      <svg width="22" height="18" viewBox="0 0 22 18" fill="none" aria-hidden="true">
+        <rect y="0" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+        <rect y="7.75" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+        <rect y="15.5" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+      </svg>
+    </button>
+    <nav class="site-nav" id="main-nav" aria-label="मुख्य">
       <a href="../index.html">गृहपृष्ठ</a>
       <a href="../parichay.html">परिचय</a>
       <a href="man-ra-ma.html">मन र म</a>
@@ -25,10 +78,15 @@
       <a href="shoshitka-shabdaharu.html" aria-current="page">शोषितका शब्दहरू</a>
       <a href="ujyalo-khojdai.html">उज्यालो खोज्दै</a>
     </nav>
+    <div class="lang-switcher" aria-label="Language / भाषा">
+      <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
+      <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हि</button>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="work-hero t-shabda">
     <div class="wrap">
       <div class="hero-cover">
@@ -136,7 +194,8 @@
       <article class="piece" id="p1">
         <span class="kicker">कविता १</span>
         <h3>अक्षर: श्रद्धाञ्जली आमालाई</h3>
-        <div class="verse">मलाई अक्षरले सोध्न थालेपछि नै मैले
+        <div class="trans lang-ne">
+          <div class="verse">मलाई अक्षरले सोध्न थालेपछि नै मैले
 अक्षरसित बात गर्न थालेको हो।
 अक्षर मौन हुन्थ्यो सधैँ
 म आफै बोलाउँथे उसलाई
@@ -164,13 +223,80 @@
 न त आमाले परीक्षा लिनुभयो
 तै पनि म उतीर्ण भएँ।
 मेरो पाठशाला मेरी आमा।</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English Translation — A Tribute to Mother</span>
+          <div class="verse">It was only when letters began to question me
+that I began to converse with them.
+The letters were always silent —
+I was the one who called out to them.
+Those half-formed early syllables
+played games with my baby tongue —
+this is the same tongue that said "l" for "r" and "r" for "l".
+
+My school was home itself,
+my universities were the grinding stone and the pestle-mortar.
+Strapped to my mother's back with a cloth band,
+while the millstone turned
+and the corn-kernels were ground to flour,
+the syllables uttered by my mother's voice
+were my textbooks —
+and with each thump of the pestle-mortar
+came the recitation of numbers and multiplication tables.
+
+From my mother's primal voice
+I made my way through school and college;
+letter by letter I searched for words of meaning.
+If anyone says my mother was illiterate —
+how could I ever have become educated?
+Mother printed letters from the notebook of her heart
+and pressed words into my tender mind.
+I never once paid her a fee;
+she never once gave me an exam —
+and yet I passed.
+My mother is my school.</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी अनुवाद — माँ को श्रद्धांजलि</span>
+          <div class="verse">जब से अक्षरों ने मुझसे पूछना शुरू किया
+तभी से मैंने अक्षरों से बात करना शुरू किया।
+अक्षर हमेशा चुप रहते थे —
+उन्हें मैं ही पुकारता था।
+इधर-उधर बिखरे तुतले अक्षर
+मेरी तोतली बोली से खेलते थे —
+यही जीभ है जो 'ल' को 'ल' और 'र' को भी 'ल' कहती थी।
+
+बड़ा विद्यालय तो घर ही था,
+ढेकी और जाँता ही मेरे महाविद्यालय थे।
+माँ की पीठ पर पटुके से बँधे हुए,
+जाँते के घूमने के साथ
+मकई के दाने पिसते-पिसते
+माँ के कंठ से उच्चारित
+प्रारंभिक अक्षरों की प्रतिध्वनियाँ
+मेरी किताबें थीं।
+ढेकी की ठक-ठक के साथ
+गिनती और पहाड़ों का उच्चारण होता था।
+
+माँ की प्रारंभिक आवाज़ से मैंने
+उच्च और महाविद्यालय तक पढ़ाई की,
+अक्षर-अक्षर से सार्थक शब्दों की खोज की।
+यदि कोई कहे कि मेरी माँ अनपढ़ थीं —
+तो मैं कहाँ से शिक्षित हुआ होता?
+माँ ने मन की कापी से अक्षर छापकर
+मेरे कोमल मस्तिष्क में शब्द उकेर दिए।
+मैंने माँ को कभी फ़ीस नहीं दी,
+न माँ ने कभी परीक्षा ली —
+फिर भी मैं उत्तीर्ण हुआ।
+मेरी पाठशाला मेरी माँ है।</div>
+        </div>
         <p class="top-link"><a href="#top">↑ माथि फर्कनुहोस्</a> · <a href="../index.html">गृहपृष्ठ</a></p>
       </article>
 
       <article class="piece" id="p2">
         <span class="kicker">कविता २</span>
         <h3>बाउ</h3>
-        <div class="verse">बाउ हिँड़ेका डामहरूमा
+        <div class="trans lang-ne">
+          <div class="verse">बाउ हिँड़ेका डामहरूमा
 हिँड्न नमानेपछि नै
 बारीमा झाड़ी पलाएको हो।
 हलो चिरेर दाउरा बालेपछि
@@ -196,6 +322,68 @@
 दुबै, कतार, मलेसियातिर लाग्यो
 आमा सुत्ने भँड़ारमा
 चितुवा सुत्यो।</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English Translation</span>
+          <div class="verse">Only after refusing to walk
+in the footsteps Father left
+did the weeds grow tall in the garden.
+
+Once the plough was burned for firewood,
+maize would not ripen,
+millet would not sprout,
+the field's irrigation channel collapsed.
+Once the nails began to grow long,
+a washing machine became a necessity —
+the fields lay barren.
+When the cows, one by one,
+spilt from the truck beds,
+the cow-shed caught fire.
+Without a gas stove life stopped.
+The house emptied.
+Father died.
+Mother wandered in her grief —
+the walls and floors of the house
+are cold, damp, mossed over.
+
+Father's savings chest emptied.
+Mother's dowry wore away.
+The village's warmth —
+both sons gone, to Qatar, to Malaysia.
+In the storeroom where Mother used to sleep,
+a leopard sleeps now.</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी अनुवाद</span>
+          <div class="verse">पिता के चलाए हुए कदमों पर
+चलने से इनकार किया तो
+बगीचे में झाड़ियाँ उग आईं।
+
+हल को जलाकर लकड़ी बनाया तो
+मकई नहीं फली,
+कोदो नहीं उगी,
+खेत की नहर टूट गई।
+जब नाखून बढ़ने लगे
+तो वाशिंग मशीन के बिना काम न चला —
+खेत बंजर हो गए।
+गायें झुण्ड-झुण्ड में
+ट्रकों में लदकर चली गईं —
+तो गोशाले में आग लग गई।
+गैस की अँगीठी के बिना काम न चला।
+घर खाली हो गया।
+पिता मर गए।
+माँ वियोग में भटकती रहीं —
+घर की दीवारें और फर्श
+सिकुड़ रहे हैं,
+काई लगकर उखड़ रहे हैं।
+
+पिता का जमा-खाता खाली हो गया।
+माँ का दहेज घिस गया।
+गाँव की रौनक —
+दोनों, कतर और मलेशिया चले गए।
+जिस कोठरी में माँ सोती थीं,
+वहाँ अब तेंदुआ सोता है।</div>
+        </div>
         <p class="top-link"><a href="#top">↑ माथि फर्कनुहोस्</a> · <a href="../index.html">गृहपृष्ठ</a></p>
       </article>
 
@@ -1219,17 +1407,19 @@
         <ul class="contact-list">
           <li>✉ <a href="mailto:muktinathshoshit@gmail.com">muktinathshoshit@gmail.com</a></li>
           <li>☎ <a href="https://wa.me/+917478569175">WhatsApp: +91 74785 69175</a></li>
-          <li>📘 <a href="https://facebook.com/muktinathsharma.shosit" rel="noopener">Facebook — मुक्तिनाथ शर्मा</a></li>
-          <li>📘 <a href="https://facebook.com/shositwords" rel="noopener">Facebook — शोषितका शब्दहरू</a></li>
+          <li>📘 <a href="https://facebook.com/muktinathsharma.shosit" rel="noopener noreferrer">Facebook — मुक्तिनाथ शर्मा</a></li>
+          <li>📘 <a href="https://facebook.com/shositwords" rel="noopener noreferrer">Facebook — शोषितका शब्दहरू</a></li>
         </ul>
       </div>
     </div>
     <div class="copy">
-      <span>© मुक्तिनाथ शर्मा 'शोषित' । Muktinath Sharma 'Shoshit'</span>
-      <span>सर्वाधिकार लेखकमा सुरक्षित</span>
+      <span>© मुक्तिनाथ शर्मा 'शोषित' · Muktinath Sharma 'Shoshit'</span>
+      <span>सर्वाधिकार लेखकमा सुरक्षित · All rights reserved</span>
     </div>
   </div>
 </footer>
 
+<button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+<script src="../js/site.js"></script>
 </body>
 </html>

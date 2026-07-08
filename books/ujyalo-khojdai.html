@@ -3,8 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>उज्यालो खोज्दै — मुक्तक सङ्ग्रह । मुक्तिनाथ शर्मा 'शोषित'</title>
-<meta name="description" content="'उज्यालो खोज्दै' (२०२५) — मुक्तिनाथ शर्मा 'शोषित'को मुक्तक सङ्ग्रह। ५२ मुक्तकहरूको पूर्ण पाठ, भूमिका कमल भट्टराईद्वारा।">
+<title>उज्यालो खोज्दै — मुक्तक सङ्ग्रह · मुक्तिनाथ शर्मा 'शोषित'</title>
+<meta name="description" content="'उज्यालो खोज्दै' (२०२५) — मुक्तिनाथ शर्मा 'शोषित'को मुक्तक सङ्ग्रह। ५२ मुक्तकहरूको पूर्ण पाठ — माया, प्रकृति, अस्मिता, जीवनदर्शन।">
+
+<!-- Open Graph -->
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="शोषितका शब्दहरू">
+<meta property="og:url" content="https://shoshit.in/books/ujyalo-khojdai.html">
+<meta property="og:title" content="उज्यालो खोज्दै — मुक्तिनाथ शर्मा 'शोषित' · ५२ मुक्तकहरू">
+<meta property="og:description" content="'उज्यालो खोज्दै' (२०२५) — ५२ मुक्तकहरूको सङ्ग्रह। माया-प्रेम, प्रकृति, गोर्खा अस्मिता र जीवनदर्शनमा आधारित छोटा तर तीखा रचनाहरू।">
+<meta property="og:image" content="https://shoshit.in/images/covers/ujyalo-khojdai-cover.png">
+<meta property="og:image:alt" content="Cover of Ujyalo Khojdai muktak collection 2025">
+<meta property="og:locale" content="ne_NP">
+<meta property="book:author" content="Muktinath Sharma 'Shoshit'">
+<meta property="book:release_date" content="2025">
+<meta property="book:isbn" content="978-93-342-1843-5">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="उज्यालो खोज्दै — Muktinath Sharma 'Shoshit' · 52 Muktak (2025)">
+<meta name="twitter:description" content="Fifth and latest work (2025) by Muktinath Sharma 'Shoshit' — 52 muktak (four-line verses) on love, nature, identity and life philosophy. Full text at shoshit.in">
+<meta name="twitter:image" content="https://shoshit.in/images/covers/ujyalo-khojdai-cover.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://shoshit.in/books/ujyalo-khojdai.html">
+
+<!-- JSON-LD: Book -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "उज्यालो खोज्दै",
+  "alternateName": "Ujyalo Khojdai",
+  "url": "https://shoshit.in/books/ujyalo-khojdai.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://shoshit.in/#author",
+    "name": "Muktinath Sharma 'Shoshit'"
+  },
+  "datePublished": "2025",
+  "isbn": "978-93-342-1843-5",
+  "inLanguage": "ne",
+  "genre": "Poetry / Muktak",
+  "description": "Fifth and latest collection featuring 52 muktak (four-line verses) on themes of love, nature, Gorkha identity, and life philosophy.",
+  "image": "https://shoshit.in/images/covers/ujyalo-khojdai-cover.png"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Noto+Serif+Devanagari:wght@400;600&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
@@ -13,10 +58,20 @@
 </head>
 <body>
 
+<div id="read-progress" role="progressbar" aria-label="Reading progress"></div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="../index.html">शोषितका शब्दहरू</a>
-    <nav class="site-nav" aria-label="मुख्य">
+    <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation menu">
+      <svg width="22" height="18" viewBox="0 0 22 18" fill="none" aria-hidden="true">
+        <rect y="0" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+        <rect y="7.75" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+        <rect y="15.5" width="22" height="2.5" rx="1.25" fill="currentColor"/>
+      </svg>
+    </button>
+    <nav class="site-nav" id="main-nav" aria-label="मुख्य">
       <a href="../index.html">गृहपृष्ठ</a>
       <a href="../parichay.html">परिचय</a>
       <a href="man-ra-ma.html">मन र म</a>
@@ -25,10 +80,15 @@
       <a href="shoshitka-shabdaharu.html">शोषितका शब्दहरू</a>
       <a href="ujyalo-khojdai.html" aria-current="page">उज्यालो खोज्दै</a>
     </nav>
+    <div class="lang-switcher" aria-label="Language / भाषा">
+      <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
+      <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हि</button>
+    </div>
   </div>
 </header>
 
-<main>
+<main id="main-content">
   <section class="work-hero t-ujyalo">
     <div class="wrap">
       <div class="hero-cover">
@@ -139,42 +199,122 @@
 
       <article class="piece" id="m1">
         <span class="kicker">मुक्तक १</span>
-        <div class="verse">एउटा तस्बिर खिचिराखौँ कतै भित्तामा मन टाँसिन्छ भने
+        <div class="trans lang-ne">
+          <div class="verse">एउटा तस्बिर खिचिराखौँ कतै भित्तामा मन टाँसिन्छ भने
 राखिदेऊ यादहरूमा ढुकढुकीभित्र आँटिन्छ भने
 खाली छ आऊ बस मनको सानो ठाउँ छ
 आँखाभित्रै छल्काएर आँसु साँचिन्छ भने।</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English</span>
+          <div class="verse">Let us take a photograph — if the heart wishes to be pasted on a wall;
+keep it among the memories — if it wishes to be tucked inside a heartbeat.
+Come, sit — there is a small space open in the heart.
+Let a tear well up inside the eyes and be saved there.</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी</span>
+          <div class="verse">एक तस्वीर खींच रख लो — यदि मन दीवार पर टँगना चाहे।
+यादों में रख दो — यदि धड़कन में समाना चाहे।
+खाली है आओ बैठो — मन में एक छोटी-सी जगह है।
+आँखों के भीतर छलकाकर आँसू को सहेज लो।</div>
+        </div>
       </article>
 
       <article class="piece" id="m2">
         <span class="kicker">मुक्तक २</span>
-        <div class="verse">अमूल ताजा कहिल्यै बासी हुन्छ र
+        <div class="trans lang-ne">
+          <div class="verse">अमूल ताजा कहिल्यै बासी हुन्छ र
 उमेर आएपछि नहाँसी हुन्छ र
 समय हावासरि चलिरहन्छ
 सज्जनलाई पनि फाँसी हुन्छ र!</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English</span>
+          <div class="verse">Does the priceless and fresh ever go stale?
+Does one stop laughing when age arrives?
+Time keeps moving like the wind —
+Can even the righteous be hanged?!</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी</span>
+          <div class="verse">क्या बेशकीमती और ताज़ा चीज़ कभी बासी होती है?
+क्या उम्र आने पर हँसना बंद हो जाता है?
+समय हवा की तरह चलता रहता है —
+क्या सज्जन को भी फाँसी होती है?!</div>
+        </div>
       </article>
 
       <article class="piece" id="m3">
         <span class="kicker">मुक्तक ३</span>
-        <div class="verse">मेरो माया उसको मुटुमा लागिदिए पो हुन्थ्यो
+        <div class="trans lang-ne">
+          <div class="verse">मेरो माया उसको मुटुमा लागिदिए पो हुन्थ्यो
 इसाराले बोलाएको सुनिदिए पो हुन्थ्यो
 म त ऊभन्दा मरिमेट्दैछु कि क्या हो
 उसले पनि मप्रति गुनगुनाए पो हुन्थ्यो।</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English</span>
+          <div class="verse">How good it would be if my love were to strike her heart!
+How good if she heard me when I beckoned with a glance!
+It seems I am dying more than she —
+How good it would be if she, too, hummed something for me.</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी</span>
+          <div class="verse">कितना अच्छा होता — मेरी मोहब्बत उसके दिल में जा लगती।
+कितना अच्छा होता — इशारे से बुलाने पर वह सुन लेती।
+मैं तो उससे भी बढ़कर मरा जा रहा हूँ —
+कितना अच्छा होता — वह भी मेरे लिए कुछ गुनगुनाती।</div>
+        </div>
       </article>
 
       <article class="piece" id="m4">
         <span class="kicker">मुक्तक ४</span>
-        <div class="verse">कति छन् तिम्रा वेदनाका आँसु पोखिदेऊ मलाई
+        <div class="trans lang-ne">
+          <div class="verse">कति छन् तिम्रा वेदनाका आँसु पोखिदेऊ मलाई
 कति अँगालिन खोजिरहेछु म सँगालिदेऊ मलाई
 हृदयको बारूदमा मिलनको सलाई कोरेर
 मरेँ म लम्पसार तिम्रो काखमा, जलाऊ मलाई।</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English</span>
+          <div class="verse">How many tears of sorrow you hold — pour them upon me.
+How long I have been longing to embrace you — gather me in.
+Strike the matchstick of union against the gunpowder of the heart —
+I have fallen limp in your lap: burn me to light.</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी</span>
+          <div class="verse">कितने हैं तुम्हारे दर्द के आँसू — मुझ पर उड़ेल दो।
+कितना मैं तुम्हें बाँहों में भरना चाहता हूँ — मुझे समेट लो।
+हृदय के बारूद पर मिलन की तीली जलाकर —
+मैं तुम्हारी गोद में ढेर हो गया हूँ, जला दो मुझे।</div>
+        </div>
       </article>
 
       <article class="piece" id="m5">
         <span class="kicker">मुक्तक ५</span>
-        <div class="verse">फुलेछ रातो गुलाफ रङ्ग भरेर आँतमा
+        <div class="trans lang-ne">
+          <div class="verse">फुलेछ रातो गुलाफ रङ्ग भरेर आँतमा
 प्रेम छ अधरमा, सम्झना धड़्कनमा न छ जातमा
 समाऊँ लाग्छ कोपिला काँड़ाले कोरे पनि
 भेट्नलाई तिमी भाग्य चाहिन्छ कि माथमा।</div>
+        </div>
+        <div class="trans lang-en" lang="en" hidden>
+          <span class="trans-label">English</span>
+          <div class="verse">A red rose has bloomed, filling the core with colour.
+Love lives on the lips, memory in the heartbeat — not in caste.
+I wish to hold the blossom even though the thorn scratches —
+To meet you: does one need luck, or divine grace?</div>
+        </div>
+        <div class="trans lang-hi" lang="hi" hidden>
+          <span class="trans-label">हिन्दी</span>
+          <div class="verse">लाल गुलाब खिला है — भीतर रंग भर गया है।
+प्रेम अधरों पर है, स्मृति धड़कन में — जाति में नहीं।
+काँटों से खरोंच लगे फिर भी कली को थामना चाहता हूँ —
+तुमसे मिलने के लिए भाग्य चाहिए या ईश्वर की कृपा?</div>
+        </div>
       </article>
 
       <article class="piece" id="m6">
@@ -570,17 +710,19 @@
         <ul class="contact-list">
           <li>✉ <a href="mailto:muktinathshoshit@gmail.com">muktinathshoshit@gmail.com</a></li>
           <li>☎ <a href="https://wa.me/+917478569175">WhatsApp: +91 74785 69175</a></li>
-          <li>📘 <a href="https://facebook.com/muktinathsharma.shosit" rel="noopener">Facebook — मुक्तिनाथ शर्मा</a></li>
-          <li>📘 <a href="https://facebook.com/shositwords" rel="noopener">Facebook — शोषितका शब्दहरू</a></li>
+          <li>📘 <a href="https://facebook.com/muktinathsharma.shosit" rel="noopener noreferrer">Facebook — मुक्तिनाथ शर्मा</a></li>
+          <li>📘 <a href="https://facebook.com/shositwords" rel="noopener noreferrer">Facebook — शोषितका शब्दहरू</a></li>
         </ul>
       </div>
     </div>
     <div class="copy">
-      <span>© मुक्तिनाथ शर्मा 'शोषित' । Muktinath Sharma 'Shoshit'</span>
-      <span>सर्वाधिकार लेखकमा सुरक्षित</span>
+      <span>© मुक्तिनाथ शर्मा 'शोषित' · Muktinath Sharma 'Shoshit'</span>
+      <span>सर्वाधिकार लेखकमा सुरक्षित · All rights reserved</span>
     </div>
   </div>
 </footer>
 
+<button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+<script src="../js/site.js"></script>
 </body>
 </html>
