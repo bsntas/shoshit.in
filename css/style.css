@@ -578,6 +578,84 @@ details.toc-fold summary{
 .piece h3{ margin-bottom:.3rem; }
 
 /* ────────────────────────────────────────────────────────────
+   Author bio / writing style description (parichay page)
+   ──────────────────────────────────────────────────────────── */
+.author-bio{
+  max-width:var(--measure);
+  margin:0 auto 2rem;
+}
+.author-bio .prose p{ margin-bottom:1em; }
+.author-bio .prose p:last-child{ margin-bottom:0; }
+
+/* ────────────────────────────────────────────────────────────
+   Voice showcase / pull quotes (parichay page)
+   ──────────────────────────────────────────────────────────── */
+.voice-showcase{
+  max-width:56rem;
+  margin:0 auto 2rem;
+}
+.pull-quotes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+  margin-top:1.5rem;
+}
+@media(max-width:760px){
+  .pull-quotes{ grid-template-columns:1fr; }
+}
+.pull-quote{
+  background:var(--paper-2);
+  border-top:3px solid var(--sindoor);
+  border-radius:0 0 4px 4px;
+  padding:1.4rem 1.5rem 1.25rem;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+}
+.pull-quote::before{
+  content:'\201C';
+  font-family:var(--disp);
+  font-size:2.8rem;
+  color:var(--sindoor);
+  line-height:.85;
+  opacity:.3;
+  display:block;
+  margin-bottom:.35rem;
+}
+.pull-quote blockquote{
+  margin:0 0 .6rem;
+  font-family:var(--body);
+  font-size:1.1rem;
+  line-height:1.8;
+  color:var(--ink);
+  quotes:none;
+  flex:1;
+}
+.pull-quote blockquote::before,
+.pull-quote blockquote::after{ content:''; }
+.pull-quote .quote-gloss{
+  font-size:.83rem;
+  color:var(--ink-soft);
+  font-style:italic;
+  font-family:Georgia,'Times New Roman',serif;
+  margin-bottom:.75rem;
+  line-height:1.5;
+}
+.pull-quote figcaption{
+  font-family:var(--ui);
+  font-size:.76rem;
+  color:var(--ink-soft);
+  border-top:1px solid var(--line);
+  padding-top:.55rem;
+  margin-top:auto;
+}
+.pull-quote figcaption a{
+  color:var(--tea);
+  text-decoration:underline;
+  text-underline-offset:2px;
+}
+
+/* ────────────────────────────────────────────────────────────
    Print styles
    ──────────────────────────────────────────────────────────── */
 @media print{
