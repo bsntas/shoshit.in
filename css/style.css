@@ -1,5 +1,6 @@
 /* ============================================================
    शोषितका शब्दहरू — Muktinath Sharma 'Shoshit'
+   Professional literary archive — shoshit.in
    Design tokens:
      Ink        #292018   (deep book ink)
      Paper      #f1e9d7   (aged press paper)
@@ -65,6 +66,25 @@ a:focus-visible, button:focus-visible{
 }
 
 /* ---------- header ---------- */
+/* ── skip nav for keyboard / screen reader users ── */
+.skip-link{
+  position:absolute; left:-9999px; top:.5rem;
+  background:var(--sindoor); color:#fff;
+  padding:.4rem 1rem; border-radius:3px;
+  font-family:var(--ui); font-size:.9rem;
+  z-index:200;
+}
+.skip-link:focus{ left:1rem; }
+
+/* ── reading progress bar ── */
+#read-progress{
+  position:fixed; top:0; left:0; z-index:200;
+  height:3px; width:0%;
+  background:var(--sindoor);
+  transition:width .08s linear;
+  pointer-events:none;
+}
+
 .site-head{
   border-bottom:3px double var(--line);
   background:var(--paper);
@@ -94,6 +114,47 @@ a:focus-visible, button:focus-visible{
 .site-nav a[aria-current="page"]{
   color:var(--sindoor);
   border-bottom:2px solid var(--sindoor);
+}
+
+/* ── language switcher ── */
+.lang-switcher{
+  display:flex; gap:.25rem; margin-left:auto; flex-shrink:0;
+}
+.lang-btn{
+  background:none; border:1px solid var(--line);
+  border-radius:3px; padding:.18rem .52rem;
+  font-size:.78rem; font-family:var(--ui);
+  color:var(--ink-soft); cursor:pointer;
+  transition:background .15s, color .15s, border-color .15s;
+  line-height:1.5;
+}
+.lang-btn:hover{ background:var(--paper-2); border-color:var(--gold); color:var(--ink); }
+.lang-btn.active,
+.lang-btn[aria-pressed="true"]{
+  background:var(--sindoor); border-color:var(--sindoor); color:#fff;
+}
+
+/* ── mobile nav hamburger ── */
+#nav-toggle{
+  display:none; background:none; border:none; cursor:pointer;
+  padding:.3rem .4rem; margin-left:auto; color:var(--ink);
+  line-height:1;
+}
+#nav-toggle svg{ display:block; }
+@media (max-width:700px){
+  #nav-toggle{ display:flex; align-items:center; }
+  .lang-switcher{ margin-left:0; order:-1; }
+  .site-nav{
+    display:none; flex-direction:column;
+    position:absolute; top:100%; left:0; right:0; z-index:49;
+    background:var(--paper); border-bottom:2px solid var(--line);
+    padding:.8rem 1.2rem 1rem; gap:.55rem;
+    box-shadow:0 4px 12px rgba(41,32,24,.12);
+  }
+  .site-nav.nav-open{ display:flex; }
+  .site-head .wrap{
+    position:relative; flex-wrap:nowrap; gap:.8rem;
+  }
 }
 
 /* ---------- hero (home) ---------- */
@@ -441,4 +502,97 @@ details.toc-fold summary{
   margin-top:2.2rem; padding-top:1.2rem;
   font-family:var(--ui); font-size:.85rem; color:#8b98a2;
   display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Share strip
+   ──────────────────────────────────────────────────────────── */
+.share-strip{
+  display:flex; align-items:center; gap:.35rem;
+  flex-wrap:wrap; margin:.6rem 0 1.1rem;
+  padding:.55rem .7rem;
+  background:var(--paper-2); border-radius:4px;
+  border:1px solid var(--line);
+}
+.share-strip-label{
+  font-family:var(--ui); font-size:.72rem; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--tea);
+  margin-right:.2rem; white-space:nowrap;
+}
+.share-btn{
+  background:none; border:1px solid var(--line);
+  border-radius:3px; padding:.2rem .55rem;
+  font-size:.8rem; font-family:var(--ui);
+  color:var(--ink-soft); cursor:pointer;
+  transition:background .15s, color .15s, border-color .15s;
+  white-space:nowrap; line-height:1.5;
+}
+.share-btn:hover{ background:var(--sindoor); border-color:var(--sindoor); color:#fff; }
+.copy-btn:hover{ background:var(--tea); border-color:var(--tea); color:#fff; }
+
+/* ────────────────────────────────────────────────────────────
+   Translation content
+   ──────────────────────────────────────────────────────────── */
+.trans[hidden]{ display:none; }
+.trans-label{
+  font-family:var(--ui); font-size:.72rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--tea);
+  display:block; margin-bottom:.5rem; margin-top:.2rem;
+}
+.trans-pending{
+  font-family:var(--ui); font-size:.82rem; color:var(--ink-soft);
+  font-style:italic; padding:.5rem 0;
+}
+.trans.lang-en .verse,
+.trans.lang-en .prose,
+.trans.lang-en .prose-flow{ font-family:'Georgia', 'Times New Roman', serif; }
+.trans.lang-hi .verse,
+.trans.lang-hi .prose,
+.trans.lang-hi .prose-flow{ font-family:'Noto Serif Devanagari', serif; }
+
+/* ────────────────────────────────────────────────────────────
+   Back to top
+   ──────────────────────────────────────────────────────────── */
+#back-top{
+  position:fixed; bottom:1.6rem; right:1.6rem; z-index:90;
+  background:var(--dusk); color:var(--gold);
+  border:1.5px solid var(--gold); border-radius:50%;
+  width:2.8rem; height:2.8rem;
+  font-size:1.25rem; line-height:1;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none;
+  transition:opacity .25s, background .2s;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+#back-top.visible{ opacity:1; pointer-events:auto; }
+#back-top:hover{ background:var(--gold); color:var(--dusk-2); }
+
+/* ────────────────────────────────────────────────────────────
+   Social proof / site-wide banner (parichay page)
+   ──────────────────────────────────────────────────────────── */
+.fact-latest{ border-top-color:var(--sindoor); }
+
+/* ────────────────────────────────────────────────────────────
+   Improved piece spacing with share strip
+   ──────────────────────────────────────────────────────────── */
+.piece h3{ margin-bottom:.3rem; }
+
+/* ────────────────────────────────────────────────────────────
+   Print styles
+   ──────────────────────────────────────────────────────────── */
+@media print{
+  .site-head, .site-foot, .share-strip, .lang-switcher,
+  #back-top, #read-progress, .toc-fold, .cta-row,
+  #nav-toggle, .skip-link{ display:none !important; }
+  .reader{ grid-template-columns:1fr !important; }
+  .piece{ break-inside:avoid; page-break-inside:avoid; }
+  body{
+    background:white; color:black; font-size:11pt; line-height:1.8;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  a{ color:inherit; text-decoration:none; }
+  .work-hero{ background:none !important; color:black !important; padding:1rem 0; }
+  .work-hero h1, .work-hero .eyebrow, .work-hero .sub{ color:black !important; }
+  .work-hero .hero-cover{ display:none; }
+  .piece h3{ color:black; }
 }
