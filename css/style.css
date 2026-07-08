@@ -451,6 +451,39 @@ details.toc-fold summary{
 }
 .frontmatter h3{color:var(--ink);}
 
+/* frontmatter with a named preface / byline author */
+.fm-byline{ border-left:4px solid var(--sindoor); }
+.fm-header{
+  margin-bottom:1.5rem;
+  padding-bottom:1.2rem;
+  border-bottom:1px solid var(--line);
+}
+.fm-type{
+  font-family:var(--ui);
+  font-size:.72rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--tea);
+  display:block;
+  margin-bottom:.45rem;
+}
+.fm-name{
+  font-family:var(--disp);
+  font-size:1.65rem;
+  font-weight:400;
+  color:var(--sindoor);
+  line-height:1.25;
+  margin:0;
+}
+.fm-title{
+  font-family:var(--body);
+  font-size:1rem;
+  color:var(--ink-soft);
+  margin:.3rem 0 .45rem;
+  line-height:1.6;
+  font-style:italic;
+}
+
 /* ---------- parichay page ---------- */
 .parichay-verse{
   font-size:1.25rem; line-height:2.4;
