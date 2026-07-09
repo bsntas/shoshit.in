@@ -485,18 +485,28 @@ details.toc-fold summary{
 }
 
 /* ---------- parichay page ---------- */
+.parichay-card{
+  max-width:40rem; margin:0 auto;
+  background:var(--paper-2);
+  border-top:3px solid var(--sindoor);
+  border-radius:0 0 4px 4px;
+  padding:1.75rem 2.5rem 1.5rem;
+  box-shadow:0 2px 8px rgba(41,32,24,.08);
+}
 .parichay-verse{
-  font-size:1.25rem; line-height:2.4;
+  font-size:1.07rem; line-height:2.05;
   white-space:pre-line;
-  max-width:38rem; margin:0 auto;
   text-align:center;
 }
 .parichay-note{
   text-align:center; font-family:var(--ui); color:var(--ink-soft);
-  margin-top:2rem; font-size:.95rem;
+  margin-top:1.1rem; font-size:.9rem;
+}
+@media(max-width:560px){
+  .parichay-card{ padding:1.4rem 1.4rem 1.2rem; }
 }
 .facts{
-  max-width:44rem; margin:3rem auto 0;
+  max-width:44rem; margin:0 auto;
   display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.2rem;
 }
 .fact{
@@ -505,6 +515,8 @@ details.toc-fold summary{
 }
 .fact .k{font-family:var(--ui); font-size:.75rem; letter-spacing:.2em; color:var(--tea); text-transform:uppercase;}
 .fact .v{font-size:1.05rem; margin-top:.3rem; line-height:1.7;}
+.eyebrow-center{display:block; text-align:center; max-width:var(--measure); margin:0 auto 1.25rem;}
+.published-works{max-width:44rem; margin:0 auto;}
 
 /* ---------- book detail (cover-only titles) ---------- */
 .book-detail{
@@ -615,7 +627,8 @@ details.toc-fold summary{
    ──────────────────────────────────────────────────────────── */
 .author-bio{
   max-width:var(--measure);
-  margin:0 auto 2rem;
+  margin:0 auto;
+  padding:0.25rem 0 1rem;
 }
 .author-bio .prose p{ margin-bottom:1em; }
 .author-bio .prose p:last-child{ margin-bottom:0; }
