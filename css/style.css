@@ -104,7 +104,7 @@ a:focus-visible, button:focus-visible{
 }
 .brand:hover{text-decoration:none; color:var(--sindoor);}
 .brand-logo{
-  height:38px; width:auto; flex-shrink:0;
+  height:38px; width:38px; flex-shrink:0;
   display:block;
   border-radius:7px;
 }
