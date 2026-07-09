@@ -299,6 +299,10 @@ a:focus-visible, button:focus-visible{
 .book .below strong{color:var(--ink); font-weight:600;}
 
 /* ---------- home: intro strip ---------- */
+.intro-heading{
+  font-family:var(--disp); font-weight:400;
+  font-size:2rem; margin-bottom:1rem;
+}
 .intro-grid{
   display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:start;
 }
