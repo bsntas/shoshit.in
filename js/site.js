@@ -57,21 +57,25 @@
       btn.setAttribute('aria-pressed', String(active));
     });
 
-    // Show/hide translations per piece
-    document.querySelectorAll('.piece').forEach(function (piece) {
-      var allTrans = piece.querySelectorAll('.trans');
-      if (!allTrans.length) return; // no translation markup — leave as-is
-
-      allTrans.forEach(function (t) { t.hidden = true; });
-
-      var target = piece.querySelector('.trans.lang-' + lang);
-      if (target) {
-        target.hidden = false;
-      } else {
-        // Fallback to Nepali
-        var ne = piece.querySelector('.trans.lang-ne');
-        if (ne) ne.hidden = false;
-      }
+    // Show/hide translations — works for any element that directly parents .trans children,
+    // not limited to .piece. Shows all matching children (supports multiple per container).
+    var seen = new Set();
+    var parents = [];
+    document.querySelectorAll('.trans').forEach(function (t) {
+      var p = t.parentElement;
+      if (p && !seen.has(p)) { seen.add(p); parents.push(p); }
+    });
+    parents.forEach(function (parent) {
+      var allTrans = Array.prototype.filter.call(parent.children, function (c) {
+        return c.classList.contains('trans');
+      });
+      if (!allTrans.length) return;
+      var hasLang = allTrans.some(function (t) { return t.classList.contains('lang-' + lang); });
+      allTrans.forEach(function (t) {
+        var show = t.classList.contains('lang-' + lang) ||
+                   (!hasLang && t.classList.contains('lang-ne'));
+        t.hidden = !show;
+      });
     });
   }
 

@@ -299,6 +299,10 @@ a:focus-visible, button:focus-visible{
 .book .below strong{color:var(--ink); font-weight:600;}
 
 /* ---------- home: intro strip ---------- */
+.intro-heading{
+  font-family:var(--disp); font-weight:400;
+  font-size:2rem; margin-bottom:1rem;
+}
 .intro-grid{
   display:grid; grid-template-columns:1.1fr .9fr; gap:3rem; align-items:start;
 }
@@ -501,6 +505,11 @@ details.toc-fold summary{
 .parichay-note{
   text-align:center; font-family:var(--ui); color:var(--ink-soft);
   margin-top:1.1rem; font-size:.9rem;
+}
+.parichay-source{
+  text-align:center; font-family:var(--ui); color:var(--ink-soft);
+  font-size:.76rem; margin-top:.45rem; opacity:.7;
+  letter-spacing:.02em;
 }
 @media(max-width:560px){
   .parichay-card{ padding:1.4rem 1.4rem 1.2rem; }
