@@ -1,67 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="शोषितका शब्दहरू — pen and leaves logo">
-  <defs>
-    <linearGradient id="nibGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#9a9a9a"/>
-      <stop offset="32%"  stop-color="#e2e2e2"/>
-      <stop offset="50%"  stop-color="#efefef"/>
-      <stop offset="68%"  stop-color="#e2e2e2"/>
-      <stop offset="100%" stop-color="#9a9a9a"/>
-    </linearGradient>
-    <linearGradient id="collarGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#6a6a6a"/>
-      <stop offset="40%"  stop-color="#b8b8b8"/>
-      <stop offset="60%"  stop-color="#b8b8b8"/>
-      <stop offset="100%" stop-color="#6a6a6a"/>
-    </linearGradient>
-    <linearGradient id="barrelGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#080808"/>
-      <stop offset="20%"  stop-color="#242424"/>
-      <stop offset="50%"  stop-color="#343434"/>
-      <stop offset="80%"  stop-color="#242424"/>
-      <stop offset="100%" stop-color="#080808"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Badge background — ensures visibility in dark mode -->
-  <rect x="2" y="2" width="96" height="96" rx="9" fill="#f7f2e6" stroke="#c8973f" stroke-width="2.5"/>
-
-  <!-- Left leaf -->
-  <path d="M50,35 C37,27 20,15 13,4 C27,11 45,23 50,35 Z"
-        fill="#3b7a30" stroke="#285220" stroke-width="0.6"/>
-  <!-- Left leaf midrib -->
-  <path d="M50,35 C37,27 20,15 13,4"
-        stroke="#1e4018" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-  <!-- Left lateral veins -->
-  <g stroke="#1e4018" stroke-width="0.55" fill="none" opacity="0.65">
-    <path d="M41,29 L31,23"/>
-    <path d="M33,22 L25,17"/>
-    <path d="M26,17 L20,12"/>
-  </g>
-
-  <!-- Right leaf -->
-  <path d="M50,35 C63,27 80,15 87,4 C73,11 55,23 50,35 Z"
-        fill="#3b7a30" stroke="#285220" stroke-width="0.6"/>
-  <!-- Right leaf midrib -->
-  <path d="M50,35 C63,27 80,15 87,4"
-        stroke="#1e4018" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-  <!-- Right lateral veins -->
-  <g stroke="#1e4018" stroke-width="0.55" fill="none" opacity="0.65">
-    <path d="M59,29 L69,23"/>
-    <path d="M67,22 L75,17"/>
-    <path d="M74,17 L80,12"/>
-  </g>
-
-  <!-- Pen nib body -->
-  <path d="M50,35 L29,73 L71,73 Z" fill="url(#nibGrad)"/>
-  <!-- Nib centre slit -->
-  <line x1="50" y1="36" x2="50" y2="73"
-        stroke="#606060" stroke-width="1.4"/>
-  <!-- Breather hole -->
-  <circle cx="50" cy="41" r="2" fill="#555"/>
-
-  <!-- Collar -->
-  <rect x="29" y="72" width="42" height="6" rx="1.5" fill="url(#collarGrad)"/>
-
-  <!-- Barrel -->
-  <rect x="35" y="78" width="30" height="22" rx="4" fill="url(#barrelGrad)"/>
+<svg width="1504" height="1504"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" overflow="hidden">
+    <defs>
+        <linearGradient x1="2320" y1="1800" x2="2776" y2="1800" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill0">
+            <stop offset="0" stop-color="#080808" stop-opacity="1"/>
+            <stop offset="0.2" stop-color="#242424" stop-opacity="1"/>
+            <stop offset="0.5" stop-color="#343434" stop-opacity="1"/>
+            <stop offset="0.8" stop-color="#242424" stop-opacity="1"/>
+            <stop offset="1" stop-color="#080808" stop-opacity="1"/>
+        </linearGradient>
+        <linearGradient x1="2350" y1="1381" x2="2746" y2="1381" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill1">
+            <stop offset="0" stop-color="#9A9A9A" stop-opacity="1"/>
+            <stop offset="0.27" stop-color="#9A9A9A" stop-opacity="1"/>
+            <stop offset="0.56" stop-color="#E2E2E2" stop-opacity="1"/>
+            <stop offset="0.78" stop-color="#9A9A9A" stop-opacity="1"/>
+            <stop offset="1" stop-color="#9A9A9A" stop-opacity="1"/>
+        </linearGradient>
+        <linearGradient x1="2323" y1="1625.5" x2="2780" y2="1625.5" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill2">
+            <stop offset="0" stop-color="#6A6A6A" stop-opacity="1"/>
+            <stop offset="0.17" stop-color="#6A6A6A" stop-opacity="1"/>
+            <stop offset="0.42" stop-color="#B8B8B8" stop-opacity="1"/>
+            <stop offset="0.6" stop-color="#B8B8B8" stop-opacity="1"/>
+            <stop offset="0.85" stop-color="#6A6A6A" stop-opacity="1"/>
+            <stop offset="1" stop-color="#6A6A6A" stop-opacity="1"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(-1796 -485)">
+        <g>
+            <path d="M1818 643.875C1818 568.281 1879.28 507 1954.87 507L3141.13 507C3216.72 507 3278 568.281 3278 643.875L3278 1831.13C3278 1906.72 3216.72 1968 3141.13 1968L1954.87 1968C1879.28 1968 1818 1906.72 1818 1831.13Z" stroke="#C8973F" stroke-width="37.9843" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="#F7F2E6" fill-rule="evenodd" fill-opacity="1"/>
+            <path d="M2320 1712.82C2320 1685.3 2342.3 1663 2369.82 1663L2726.18 1663C2753.7 1663 2776 1685.3 2776 1712.82L2776 1887.18C2776 1914.7 2753.7 1937 2726.18 1937L2369.82 1937C2342.3 1937 2320 1914.7 2320 1887.18Z" fill="url(#fill0)" fill-rule="evenodd"/>
+            <path d="M2543.5 1070.5C1941.85 869.838 2013.08 915.524 1960.5 568.5 2181.09 681.855 2508 769.507 2543.5 1070.5Z" stroke="#285220" stroke-width="9.11614" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="#3B7A30" fill-rule="evenodd" fill-opacity="1"/>
+            <path d="M2538.5 1070.5C2341.04 948.952 2082.82 766.629 1976.5 599.5" stroke="#1E4018" stroke-width="16.7133" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="none" fill-rule="evenodd"/>
+            <path d="M562 502C195.804 461.917 55.1391 204.288 0 0 163.657 50.9081 420.893 205.467 562 502Z" stroke="#285220" stroke-width="9.11614" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="#3B7A30" fill-rule="evenodd" fill-opacity="1" transform="matrix(-1 0 0 1 3117.5 568.5)"/>
+            <path d="M542 471C351.568 349.452 102.541 167.129 0 0" stroke="#1E4018" stroke-width="16.7133" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 3102.5 599.5)"/>
+            <path d="M59.3595 406C-8.83007 216.671-16.8361 102.796 27.9755 0 85.6556 167.289 103.4 251.655 59.3595 406Z" stroke="#285220" stroke-width="9.11614" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="#3B7A30" fill-rule="evenodd" fill-opacity="1" transform="matrix(-1 0 0 1 2604.5 660.5)"/>
+            <path d="M25.9998 390C16.8647 289.355 4.91888 138.387 0 0" stroke="#1E4018" stroke-width="16.7133" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 2576.5 671.5)"/>
+            <path d="M16.9998 134C11.0269 99.4194 3.21619 47.5485 0 0" stroke="#1E4018" stroke-width="27.5" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 2548 1084)"/>
+            <path d="M2548 1175 2350 1587 2746 1587Z" fill="url(#fill1)" fill-rule="evenodd"/>
+            <path d="M2546.5 1233.5 2546.5 1583.5" stroke="#FFFFFF" stroke-width="21.2714" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8" stroke-opacity="1" fill="none" fill-rule="evenodd"/>
+            <path d="M2517 1279C2517 1262.43 2530.66 1249 2547.5 1249 2564.34 1249 2578 1262.43 2578 1279 2578 1295.57 2564.34 1309 2547.5 1309 2530.66 1309 2517 1295.57 2517 1279Z" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="1"/>
+            <path d="M2323 1602.75C2323 1590.19 2333.19 1580 2345.75 1580L2757.25 1580C2769.81 1580 2780 1590.19 2780 1602.75L2780 1648.25C2780 1660.81 2769.81 1671 2757.25 1671L2345.75 1671C2333.19 1671 2323 1660.81 2323 1648.25Z" fill="url(#fill2)" fill-rule="evenodd"/>
+        </g>
+    </g>
 </svg>
