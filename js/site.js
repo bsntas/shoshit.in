@@ -77,6 +77,15 @@
         t.hidden = !show;
       });
     });
+
+    // Swap text on elements with data-ne/en/hi attributes (titles, kickers, links)
+    document.querySelectorAll('[data-ne]').forEach(function (el) {
+      var text = el.getAttribute('data-' + lang);
+      if (!text) text = el.getAttribute('data-ne');
+      if (text !== null) el.textContent = text;
+    });
+
+    document.documentElement.lang = lang === 'en' ? 'en' : lang === 'hi' ? 'hi' : 'ne';
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
