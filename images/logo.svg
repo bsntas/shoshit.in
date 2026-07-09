@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 158" role="img" aria-label="शोषितका शब्दहरू — pen and leaves logo">
+  <defs>
+    <linearGradient id="nibGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#9a9a9a"/>
+      <stop offset="32%"  stop-color="#e2e2e2"/>
+      <stop offset="50%"  stop-color="#efefef"/>
+      <stop offset="68%"  stop-color="#e2e2e2"/>
+      <stop offset="100%" stop-color="#9a9a9a"/>
+    </linearGradient>
+    <linearGradient id="collarGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#6a6a6a"/>
+      <stop offset="40%"  stop-color="#b8b8b8"/>
+      <stop offset="60%"  stop-color="#b8b8b8"/>
+      <stop offset="100%" stop-color="#6a6a6a"/>
+    </linearGradient>
+    <linearGradient id="barrelGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#080808"/>
+      <stop offset="20%"  stop-color="#242424"/>
+      <stop offset="50%"  stop-color="#343434"/>
+      <stop offset="80%"  stop-color="#242424"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left leaf -->
+  <path d="M50,55 C37,43 20,24 13,7 C27,17 45,37 50,55 Z"
+        fill="#3b7a30" stroke="#285220" stroke-width="0.6"/>
+  <!-- Left leaf midrib -->
+  <path d="M50,55 C37,43 20,24 13,7"
+        stroke="#1e4018" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+  <!-- Left lateral veins -->
+  <g stroke="#1e4018" stroke-width="0.55" fill="none" opacity="0.65">
+    <path d="M41,45 L31,36"/>
+    <path d="M33,35 L25,27"/>
+    <path d="M26,26 L20,19"/>
+  </g>
+
+  <!-- Right leaf -->
+  <path d="M50,55 C63,43 80,24 87,7 C73,17 55,37 50,55 Z"
+        fill="#3b7a30" stroke="#285220" stroke-width="0.6"/>
+  <!-- Right leaf midrib -->
+  <path d="M50,55 C63,43 80,24 87,7"
+        stroke="#1e4018" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+  <!-- Right lateral veins -->
+  <g stroke="#1e4018" stroke-width="0.55" fill="none" opacity="0.65">
+    <path d="M59,45 L69,36"/>
+    <path d="M67,35 L75,27"/>
+    <path d="M74,26 L80,19"/>
+  </g>
+
+  <!-- Pen nib body -->
+  <path d="M50,55 L29,116 L71,116 Z" fill="url(#nibGrad)"/>
+  <!-- Nib centre slit -->
+  <line x1="50" y1="57" x2="50" y2="116"
+        stroke="#606060" stroke-width="1.4"/>
+  <!-- Breather hole -->
+  <circle cx="50" cy="64" r="3" fill="#555"/>
+
+  <!-- Collar -->
+  <rect x="29" y="113" width="42" height="9" rx="2.5" fill="url(#collarGrad)"/>
+
+  <!-- Barrel -->
+  <rect x="35" y="122" width="30" height="36" rx="7" fill="url(#barrelGrad)"/>
+</svg>
