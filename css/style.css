@@ -396,6 +396,7 @@ details.toc-fold summary{
 }
 
 .works{min-width:0;}
+.reader > .works:only-child{grid-column: 1 / -1;}
 .piece{
   padding:2.6rem 0;
   border-bottom:1px solid var(--line);
@@ -551,6 +552,7 @@ details.toc-fold summary{
 }
 .site-foot a{color:var(--gold);}
 .contact-list{list-style:none; font-family:var(--ui); line-height:2.1;}
+.contact-list a{overflow-wrap: break-word;}
 .copy{
   border-top:1px solid rgba(255,255,255,.12);
   margin-top:2.2rem; padding-top:1.2rem;
