@@ -100,8 +100,13 @@ a:focus-visible, button:focus-visible{
   color:var(--ink);
   white-space:nowrap;
   line-height:1.3;
+  display:flex; align-items:center; gap:.55rem;
 }
 .brand:hover{text-decoration:none; color:var(--sindoor);}
+.brand-logo{
+  height:38px; width:auto; flex-shrink:0;
+  display:block;
+}
 .site-nav{
   display:flex; gap:1.15rem; flex-wrap:nowrap;
   overflow-x:auto; -webkit-overflow-scrolling:touch;
