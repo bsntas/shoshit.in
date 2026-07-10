@@ -343,6 +343,7 @@ a:focus-visible, button:focus-visible{
 .work-hero.t-dochhaya{background:linear-gradient(160deg,#26323c,#141c23);}
 .work-hero.t-shabda{background:linear-gradient(160deg,#8a5a17,#5c3a0b);}
 .work-hero.t-ujyalo{background:linear-gradient(160deg,#5b3a5e,#35203a);}
+.work-hero.t-rachana{background:linear-gradient(160deg,#26323c,#0f181f);}
 .work-hero .wrap{max-width:72rem; margin:0 auto; display:flex; align-items:flex-end; gap:2.4rem;}
 .work-hero .hero-cover{
   flex:0 0 auto; width:clamp(100px,14vw,170px);
@@ -403,6 +404,28 @@ details.toc-fold summary{
 
 .works{min-width:0;}
 .reader > .works:only-child{grid-column: 1 / -1;}
+
+/* occasion group divider — groups pieces by event / date */
+.occasion-group{
+  padding:.9rem 0 .5rem;
+  border-top:2px solid var(--line);
+  margin-top:2rem;
+}
+.occasion-group:first-child{margin-top:0; border-top:none; padding-top:0;}
+.occasion-heading{
+  display:block;
+  font-family:var(--ui); font-size:.78rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--gold); font-weight:600;
+  margin-bottom:.1rem;
+}
+.toc-occasion{
+  display:block;
+  font-family:var(--ui); font-size:.75rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--gold);
+  margin:.75rem 0 .15rem;
+}
+.toc-occasion ~ ol{ margin-left:1rem; }
+
 .piece{
   padding:2.6rem 0;
   border-bottom:1px solid var(--line);
