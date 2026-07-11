@@ -8,7 +8,9 @@
       var doc = document.documentElement;
       var scrolled = doc.scrollTop || document.body.scrollTop;
       var total = doc.scrollHeight - doc.clientHeight;
-      bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+      var pct = total > 0 ? Math.round(scrolled / total * 100) : 0;
+      bar.style.width = pct + '%';
+      bar.setAttribute('aria-valuenow', pct);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -25,19 +27,48 @@
     });
   }
 
+  // ── Theme toggle ─────────────────────────────────────────────────
+  var THEME_KEY = 'shoshit-theme';
+  var themeBtn = document.getElementById('theme-toggle');
+
+  function isDark() {
+    var stored = localStorage.getItem(THEME_KEY);
+    if (stored) return stored === 'dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function applyTheme(dark) {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    if (themeBtn) {
+      themeBtn.textContent = dark ? '☀' : '☾';
+      themeBtn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  }
+
+  applyTheme(isDark());
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var nowDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      try { localStorage.setItem(THEME_KEY, nowDark ? 'light' : 'dark'); } catch (e) {}
+      applyTheme(!nowDark);
+    });
+  }
+
   // ── Mobile nav toggle ────────────────────────────────────────────
   var navToggle = document.getElementById('nav-toggle');
-  var siteNav = document.querySelector('.site-nav');
-  if (navToggle && siteNav) {
+  var navWrap = document.querySelector('.nav-wrap');
+  if (navToggle && navWrap) {
     navToggle.addEventListener('click', function () {
       var expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
-      siteNav.classList.toggle('nav-open', !expanded);
+      navWrap.classList.toggle('nav-open', !expanded);
     });
     document.addEventListener('click', function (e) {
-      if (!navToggle.contains(e.target) && !siteNav.contains(e.target)) {
+      if (!navToggle.contains(e.target) && !navWrap.contains(e.target)) {
         navToggle.setAttribute('aria-expanded', 'false');
-        siteNav.classList.remove('nav-open');
+        navWrap.classList.remove('nav-open');
       }
     });
   }
@@ -103,11 +134,11 @@
     strip.className = 'share-strip';
     strip.setAttribute('aria-label', 'Share this piece');
     strip.innerHTML =
-      '<span class="share-strip-label">Share —</span>' +
-      '<button class="share-btn" data-platform="facebook" title="Share on Facebook">f Facebook</button>' +
-      '<button class="share-btn" data-platform="whatsapp" title="Share on WhatsApp">&#9993; WhatsApp</button>' +
-      '<button class="share-btn" data-platform="twitter" title="Share on X / Twitter">ᵔ X</button>' +
-      '<button class="share-btn copy-btn" data-platform="copy" title="Copy link to this piece">🔗 Link</button>';
+      '<span class="share-strip-label">Share</span>' +
+      '<button class="share-btn" data-platform="facebook" title="Share on Facebook">Facebook</button>' +
+      '<button class="share-btn" data-platform="whatsapp" title="Share on WhatsApp">WhatsApp</button>' +
+      '<button class="share-btn" data-platform="twitter" title="Share on X / Twitter">X</button>' +
+      '<button class="share-btn copy-btn" data-platform="copy" title="Copy link to this piece">Copy link</button>';
     return strip;
   }
 
@@ -177,6 +208,38 @@
       setTimeout(function () { btn.innerHTML = '🔗 Link'; }, 2200);
     } catch (e) {}
     document.body.removeChild(ta);
+  }
+
+  // ── Font size controls (reader pages) ───────────────────────────
+  var FONT_SIZE_KEY = 'shoshit-fontsize';
+  var readerEl = document.querySelector('.reader');
+  if (readerEl) {
+    var savedSize = localStorage.getItem(FONT_SIZE_KEY) || 'md';
+    readerEl.setAttribute('data-font-size', savedSize);
+
+    var fsContainer = document.createElement('div');
+    fsContainer.className = 'font-size-controls';
+    fsContainer.setAttribute('aria-label', 'Font size');
+    fsContainer.innerHTML =
+      '<span class="font-size-label">अक्षर ·</span>' +
+      '<button class="font-size-btn" data-size="sm" title="Smaller text">A−</button>' +
+      '<button class="font-size-btn" data-size="md" title="Default text">A</button>' +
+      '<button class="font-size-btn" data-size="lg" title="Larger text">A+</button>';
+
+    var worksEl = readerEl.querySelector('.works');
+    if (worksEl) worksEl.insertBefore(fsContainer, worksEl.firstChild);
+
+    fsContainer.querySelectorAll('.font-size-btn').forEach(function (btn) {
+      if (btn.dataset.size === savedSize) btn.classList.add('active');
+      btn.addEventListener('click', function () {
+        var size = btn.dataset.size;
+        readerEl.setAttribute('data-font-size', size);
+        try { localStorage.setItem(FONT_SIZE_KEY, size); } catch (e) {}
+        fsContainer.querySelectorAll('.font-size-btn').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.size === size);
+        });
+      });
+    });
   }
 
   // ── Book listing & detail view ───────────────────────────────────

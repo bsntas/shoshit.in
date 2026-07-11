@@ -1,7 +1,7 @@
 /* ============================================================
    शोषितका शब्दहरू — Muktinath Sharma 'Shoshit'
    Professional literary archive — shoshit.in
-   Design tokens:
+   Design tokens (light):
      Ink        #292018   (deep book ink)
      Paper      #f1e9d7   (aged press paper)
      Paper-2    #e8ddc4   (deeper paper, cards)
@@ -9,6 +9,14 @@
      Tea        #42604a   (tea-garden green)
      Dusk       #26323c   (Kanchenjunga dusk — hero)
      Gold       #c8973f   (marigold / brass)
+   Design tokens (dark):
+     Ink        #ddd3bc   (warm lamp-lit cream)
+     Paper      #161e27   (deep mountain night)
+     Paper-2    #1d2a36   (moonlit card surface)
+     Sindoor    #c83a28   (vermilion, brightened for dark)
+     Tea        #528a62   (tea-green, brightened)
+     Dusk       #0e1822   (midnight hero/footer)
+     Gold       #d4a84a   (brass, brightened)
    Type:
      Display    'Yatra One'            (author name, book titles)
      Body       'Noto Serif Devanagari'(literary text)
@@ -31,6 +39,49 @@
   --body:'Noto Serif Devanagari', 'Kalimati', serif;
   --ui:'Mukta', 'Noto Sans Devanagari', sans-serif;
   --measure: 44rem;
+}
+
+/* ── Dark mode token overrides ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink:#ddd3bc;
+    --ink-soft:#a89880;
+    --paper:#161e27;
+    --paper-2:#1d2a36;
+    --line:#2c3c4e;
+    --sindoor:#c83a28;
+    --tea:#528a62;
+    --dusk:#0e1822;
+    --dusk-2:#080f18;
+    --gold:#d4a84a;
+    --cream:#e8dfc8;
+  }
+}
+:root[data-theme="dark"] {
+  --ink:#ddd3bc;
+  --ink-soft:#a89880;
+  --paper:#161e27;
+  --paper-2:#1d2a36;
+  --line:#2c3c4e;
+  --sindoor:#c83a28;
+  --tea:#528a62;
+  --dusk:#0e1822;
+  --dusk-2:#080f18;
+  --gold:#d4a84a;
+  --cream:#e8dfc8;
+}
+:root[data-theme="light"] {
+  --ink:#292018;
+  --ink-soft:#4c4234;
+  --paper:#f1e9d7;
+  --paper-2:#e8ddc4;
+  --line:#d4c6a4;
+  --sindoor:#a62c1f;
+  --tea:#42604a;
+  --dusk:#26323c;
+  --dusk-2:#1b242c;
+  --gold:#c8973f;
+  --cream:#f7f2e6;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -57,6 +108,11 @@ body::before{
   background-size:5px 5px;
   mix-blend-mode:multiply;
 }
+@media (prefers-color-scheme: dark){
+  body::before{ mix-blend-mode:screen; background-image:radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px); }
+}
+:root[data-theme="dark"] body::before{ mix-blend-mode:screen; background-image:radial-gradient(rgba(255,255,255,.04) 1px, transparent 1px); }
+:root[data-theme="light"] body::before{ mix-blend-mode:multiply; background-image:radial-gradient(rgba(41,32,24,.045) 1px, transparent 1px); }
 main, header, footer{position:relative; z-index:1;}
 
 a{color:var(--sindoor); text-decoration:none;}
@@ -108,6 +164,16 @@ a:focus-visible, button:focus-visible{
   display:block;
   border-radius:7px;
 }
+.nav-wrap{
+  position:relative; flex:1 1 0; min-width:0;
+  overflow:hidden;
+}
+.nav-wrap::after{
+  content:'';
+  position:absolute; top:0; right:0; bottom:0; width:2.5rem;
+  background:linear-gradient(to right, transparent, var(--paper));
+  pointer-events:none;
+}
 .site-nav{
   display:flex; gap:1.15rem; flex-wrap:nowrap;
   overflow-x:auto; -webkit-overflow-scrolling:touch;
@@ -120,6 +186,18 @@ a:focus-visible, button:focus-visible{
 .site-nav a[aria-current="page"]{
   color:var(--sindoor);
   border-bottom:2px solid var(--sindoor);
+}
+
+/* ── theme toggle ── */
+#theme-toggle{
+  background:none; border:1px solid var(--line);
+  border-radius:3px; padding:.18rem .42rem;
+  font-size:.88rem; cursor:pointer; color:var(--ink-soft);
+  flex-shrink:0; line-height:1.5;
+  transition:background .15s, color .15s, border-color .15s;
+}
+#theme-toggle:hover{
+  background:var(--paper-2); border-color:var(--gold); color:var(--ink);
 }
 
 /* ── language switcher ── */
@@ -150,16 +228,20 @@ a:focus-visible, button:focus-visible{
 @media (max-width:700px){
   #nav-toggle{ display:flex; align-items:center; }
   .lang-switcher{ margin-left:0; order:-1; }
+  #theme-toggle{ order:-1; }
+  .brand{ flex:1 1 0; min-width:0; overflow:hidden; }
+  .nav-wrap{ display:none; }
+  .nav-wrap.nav-open{ display:block; }
   .site-nav{
-    display:none; flex-direction:column;
+    flex-direction:column;
     position:absolute; top:100%; left:0; right:0; z-index:49;
     background:var(--paper); border-bottom:2px solid var(--line);
     padding:.8rem 1.2rem 1rem; gap:.55rem;
     box-shadow:0 4px 12px rgba(41,32,24,.12);
   }
-  .site-nav.nav-open{ display:flex; }
+  .nav-wrap::after{ display:none; }
   .site-head .wrap{
-    position:relative; flex-wrap:nowrap; gap:.8rem;
+    position:relative; flex-wrap:nowrap; gap:.6rem;
   }
 }
 
@@ -741,6 +823,43 @@ details.toc-fold summary{
   text-underline-offset:2px;
 }
 
+/* ── Parichay page published works list ── */
+.published-works .prose ol{
+  padding-left:1.4rem; line-height:2.2;
+}
+.published-works .prose{
+  margin-top:1rem;
+}
+.author-bio .prose{
+  max-width:var(--measure); margin:0 auto;
+}
+
+/* ── Font size controls (reader pages) ── */
+.font-size-controls{
+  display:flex; align-items:center; gap:.3rem;
+  margin-bottom:1.2rem;
+}
+.font-size-label{
+  font-family:var(--ui); font-size:.72rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--tea); margin-right:.1rem;
+}
+.font-size-btn{
+  background:none; border:1px solid var(--line);
+  border-radius:3px; padding:.15rem .45rem;
+  font-family:var(--ui); font-size:.8rem; color:var(--ink-soft);
+  cursor:pointer; line-height:1.5;
+  transition:background .15s, color .15s, border-color .15s;
+}
+.font-size-btn:hover{ background:var(--paper-2); border-color:var(--gold); color:var(--ink); }
+.font-size-btn.active{ background:var(--sindoor); border-color:var(--sindoor); color:#fff; }
+
+.reader[data-font-size="sm"] .verse,
+.reader[data-font-size="sm"] .prose,
+.reader[data-font-size="sm"] .prose-flow{ font-size:.93rem; }
+.reader[data-font-size="lg"] .verse,
+.reader[data-font-size="lg"] .prose,
+.reader[data-font-size="lg"] .prose-flow{ font-size:1.18rem; }
+
 /* ────────────────────────────────────────────────────────────
    Print styles
    ──────────────────────────────────────────────────────────── */
@@ -795,7 +914,7 @@ details.toc-fold summary{
 .article-card{
   display:flex; flex-direction:column; gap:.3rem;
   padding:1rem 1.15rem .95rem;
-  background:var(--cream); border:1px solid var(--line); border-radius:6px;
+  background:var(--paper-2); border:1px solid var(--line); border-radius:6px;
   cursor:pointer; font-family:var(--body); color:var(--ink);
   text-align:left; width:100%; position:relative;
   transition:border-color .15s, box-shadow .15s, transform .15s;

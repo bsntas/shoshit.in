@@ -56,13 +56,13 @@
 </head>
 <body>
 
-<div id="read-progress" role="progressbar" aria-label="Reading progress"></div>
+<div id="read-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="../index.html">
-      <img src="../images/logo.svg" alt="" class="brand-logo" width="24" height="38">
+      <img src="../images/logo.svg" alt="" class="brand-logo" width="38" height="38">
       शोषितका शब्दहरू
     </a>
     <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation menu">
@@ -72,6 +72,7 @@
         <rect y="15.5" width="22" height="2.5" rx="1.25" fill="currentColor"/>
       </svg>
     </button>
+    <div class="nav-wrap">
     <nav class="site-nav" id="main-nav" aria-label="मुख्य">
       <a href="../index.html" data-ne="गृहपृष्ठ" data-en="Home" data-hi="मुख्य पृष्ठ">गृहपृष्ठ</a>
       <a href="../parichay.html">परिचय</a>
@@ -82,11 +83,13 @@
       <a href="shoshitka-shabdaharu.html">शोषितका शब्दहरू</a>
       <a href="ujyalo-khojdai.html">उज्यालो खोज्दै</a>
     </nav>
+    </div>
     <div class="lang-switcher" aria-label="Language / भाषा">
       <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
       <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
       <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हि</button>
     </div>
+    <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">☾</button>
   </div>
 </header>
 
@@ -2243,7 +2246,7 @@ These days I have been drinking quite a lot.</div>
         <h4>सम्पर्क</h4>
         <ul class="contact-list">
           <li>✉ <a href="mailto:muktinathshoshit@gmail.com">muktinathshoshit@gmail.com</a></li>
-          <li>☎ <a href="https://wa.me/+917478569175">WhatsApp: +91 74785 69175</a></li>
+          <li>☎ <a href="https://wa.me/+917478569175" rel="noopener noreferrer">WhatsApp: +91 74785 69175</a></li>
           <li>📘 <a href="https://facebook.com/muktinathsharma.shosit" rel="noopener noreferrer">Facebook — मुक्तिनाथ शर्मा</a></li>
           <li>📘 <a href="https://facebook.com/shositwords" rel="noopener noreferrer">Facebook — शोषितका शब्दहरू</a></li>
         </ul>
