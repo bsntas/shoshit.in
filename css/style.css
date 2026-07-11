@@ -231,7 +231,7 @@ a:focus-visible, button:focus-visible{
   #theme-toggle{ order:-1; }
   .brand{ flex:1 1 0; min-width:0; overflow:hidden; }
   .nav-wrap{ display:none; }
-  .nav-wrap.nav-open{ display:block; }
+  .nav-wrap.nav-open{ display:block; position:static; overflow:visible; }
   .site-nav{
     flex-direction:column;
     position:absolute; top:100%; left:0; right:0; z-index:49;
