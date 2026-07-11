@@ -59,13 +59,13 @@
 </head>
 <body>
 
-<div id="read-progress" role="progressbar" aria-label="Reading progress"></div>
+<div id="read-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <img src="images/logo.svg" alt="" class="brand-logo" width="24" height="38">
+      <img src="images/logo.svg" alt="" class="brand-logo" width="38" height="38">
       शोषितका शब्दहरू
     </a>
     <button id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Navigation menu">
@@ -75,6 +75,7 @@
         <rect y="15.5" width="22" height="2.5" rx="1.25" fill="currentColor"/>
       </svg>
     </button>
+    <div class="nav-wrap">
     <nav class="site-nav" id="main-nav" aria-label="मुख्य">
       <a href="index.html">गृहपृष्ठ</a>
       <a href="parichay.html" aria-current="page">परिचय</a>
@@ -85,19 +86,24 @@
       <a href="books/shoshitka-shabdaharu.html">शोषितका शब्दहरू</a>
       <a href="books/ujyalo-khojdai.html">उज्यालो खोज्दै</a>
     </nav>
+    </div>
     <div class="lang-switcher" aria-label="Language / भाषा">
       <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
       <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
       <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हि</button>
     </div>
+    <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">☾</button>
   </div>
 </header>
 
 <main id="main-content">
   <section class="work-hero">
     <div class="wrap">
-      <span class="eyebrow">बिजनबारी, दार्जीलिङ · Bijanbari, Darjeeling</span>
-      <h1>परिचय</h1>
+      <div class="hero-text">
+        <span class="eyebrow">बिजनबारी, दार्जीलिङ · Bijanbari, Darjeeling</span>
+        <h1>मुक्तिनाथ शर्मा 'शोषित'</h1>
+        <p class="sub">परिचय — कवि · निबन्धकार · कथाकार · पाँच प्रकाशित कृतिहरू</p>
+      </div>
     </div>
   </section>
 
@@ -161,21 +167,21 @@
     <span class="eyebrow eyebrow-center">लेखकबारे · About the Author</span>
     <div class="author-bio">
       <div class="trans lang-ne">
-        <div class="prose" style="max-width:var(--measure); margin:0 auto;">
+        <div class="prose">
           <p>मुक्तिनाथ शर्मा 'शोषित' दार्जीलिङका पहाडी जीवनको एक सशक्त आवाज हुन् — सुन्तले, बिजनबारीको रातो माटोमा जरा गाडेका, उनको लेखनमा पहाडको स्थिरता र स्मृतिको कोमलता दुवै छ। 'शोषित' उपनाम आफैँमा एउटा घोषणापत्र हो: दुई दशकभन्दा बढी समयमा पाँच कृतिहरूमार्फत उनले सीमान्तमा बाँचिएका जीवनहरूका अथक साक्षी बनेका छन् — स्लेटमा ककहरा सिकाउने आमा, खाडी मुलुकतिर खाली हुँदै गएको गाउँ, र एउटा चालाक मालीले थुनिराखेको भ्रमर।</p>
           <p>उनको कविता अन्तरंग र राजनीतिक बिचमा असाधारण सहजताले यात्रा गर्छ। आमाको स्मृतिदेखि सामाजिक शोषणको आलोचनासम्म, कोमल प्रेमगीतदेखि जातप्रथाको प्रश्नसम्म — उनी एकै सासमा दुवैलाई समेट्न सक्छन्। उनको भाषा सरल र सहज छ — दार्जीलिङका पहाडमा बोलिने नेपाली — तर यस सरलताभित्र एउटा गहिरो भावनात्मक सटीकता छ जुन दशकौँ अवलोकन र जीवनानुभवबाट आउँछ।</p>
           <p>प्रकृति उनको नित्य संगी हो — पहाड, ऋतुहरू, बगैँचा, नदी — सबैले उनको रचनामा अर्थ बोक्छन् जो पुस्तकपछि पुस्तकमा थपिँदै गहिरो हुँदै जान्छन्। २०२५ का दुई कृतिहरू — 'शोषितका शब्दहरू' र 'उज्यालो खोज्दै' — उनको परिपक्वतम साहित्यिक अभिव्यक्ति हुन्; मुक्तक विधामा विशेष गरी उनको संक्षिप्तताको उपहार पूर्णरूपमा प्रस्फुटित भएको छ।</p>
         </div>
       </div>
       <div class="trans lang-en" lang="en" hidden>
-        <div class="prose" style="max-width:var(--measure); margin:0 auto;">
+        <div class="prose">
           <p>Muktinath Sharma 'Shoshit' is a powerful voice of Darjeeling's hill life — rooted in the red earth of Suntale, Bijanbari, his writing holds both the stillness of mountains and the tenderness of memory. The pen name 'Shoshit' (the exploited) is itself a manifesto: across five collections spanning nearly two decades, he has been an unflinching witness to lives lived at the margins — the mother who taught the alphabet on a slate, the village slowly emptied by Gulf migration, the bee trapped by a cunning gardener.</p>
           <p>His poetry travels between the intimate and the political with rare grace. From the memory of a mother to a critique of social exploitation, from a tender love lyric to a searching verse on caste — he holds both in the same breath. His language is deliberately accessible — Nepali as spoken in the Darjeeling hills, without affectation — yet within this simplicity lies a deep emotional precision born of decades of observation and lived experience.</p>
           <p>Nature is his constant companion: the hills, the seasons, the garden, the river — all carry meaning across his work, deepening from book to book. His two 2025 collections — <em>Shoshitka Shabdaharu</em> and <em>Ujyalo Khojdai</em> — represent his most mature literary expression; in the muktak form especially, his gift for compression finds its fullest flowering: saying in four lines what others need pages to approach.</p>
         </div>
       </div>
       <div class="trans lang-hi" lang="hi" hidden>
-        <div class="prose" style="max-width:var(--measure); margin:0 auto;">
+        <div class="prose">
           <p>मुक्तिनाथ शर्मा 'शोषित' दार्जीलिङ की पहाड़ी ज़िंदगी की एक सशक्त आवाज़ हैं — सुन्तले, बिजनबारी की लाल मिट्टी में जड़ें जमाए, उनके लेखन में पहाड़ों की स्थिरता और स्मृतियों की कोमलता दोनों हैं। 'शोषित' उपनाम स्वयं एक घोषणापत्र है: लगभग दो दशकों में पाँच कृतियों के माध्यम से उन्होंने हाशिए पर जीवन जीने वालों के अथक साक्षी की भूमिका निभाई है — स्लेट पर अक्षर सिखाने वाली माँ, खाड़ी देशों की ओर खाली होता गाँव, और एक चालाक माली के जाल में फँसी भौंरी।</p>
           <p>उनकी कविता अंतरंग और राजनैतिक के बीच असाधारण सहजता से यात्रा करती है। माँ की स्मृति से सामाजिक शोषण की आलोचना तक, कोमल प्रेम-गीत से जाति-प्रथा के सवाल तक — वे एक ही साँस में दोनों को समेट सकते हैं। उनकी भाषा सरल और सहज है — दार्जीलिङ की पहाड़ियों की नेपाली — लेकिन इस सरलता के भीतर एक गहरी भावनात्मक सटीकता छिपी है जो दशकों के अवलोकन और जीवनानुभव से उपजती है।</p>
           <p>प्रकृति उनकी नित्य संगिनी है — पहाड़, ऋतुएँ, बगीचा, नदी — उनकी रचनाओं में सब अर्थ वहन करते हैं जो पुस्तक-दर-पुस्तक गहरा होता जाता है। २०२५ की दो कृतियाँ — <em>शोषितका शब्दहरू</em> और <em>उज्यालो खोज्दै</em> — उनकी सबसे परिपक्व साहित्यिक अभिव्यक्ति हैं; मुक्तक विधा में विशेष रूप से उनकी संक्षिप्तता की प्रतिभा अपने पूर्ण उत्कर्ष पर है।</p>
@@ -210,8 +216,8 @@
 
     <div class="published-works">
       <span class="eyebrow">प्रकाशित कृतिहरू · Published Works</span>
-      <div class="prose" style="margin-top:1rem;">
-        <ol style="padding-left:1.4rem; line-height:2.2;">
+      <div class="prose">
+        <ol>
           <li><a href="books/man-ra-ma.html"><strong>मन र म</strong></a> — कविता सङ्ग्रह, ५६ कविताहरू (२००६)</li>
           <li><a href="books/prakaran.html"><strong>प्रकरण</strong></a> — निबन्ध सङ्ग्रह, २० निबन्धहरू (२०११)</li>
           <li><a href="books/dochhaya.html"><strong>दोछाया</strong></a> — कथा सङ्ग्रह, २० कथाहरू (२०२३)</li>
@@ -234,7 +240,7 @@
         <h4>सम्पर्क</h4>
         <ul class="contact-list">
           <li>✉ <a href="mailto:muktinathshoshit@gmail.com">muktinathshoshit@gmail.com</a></li>
-          <li>☎ <a href="https://wa.me/+917478569175">WhatsApp: +91 74785 69175</a></li>
+          <li>☎ <a href="https://wa.me/+917478569175" rel="noopener noreferrer">WhatsApp: +91 74785 69175</a></li>
           <li>📘 <a href="https://facebook.com/muktinathsharma.shosit" rel="noopener noreferrer">Facebook — मुक्तिनाथ शर्मा</a></li>
           <li>📘 <a href="https://facebook.com/shositwords" rel="noopener noreferrer">Facebook — शोषितका शब्दहरू</a></li>
         </ul>
