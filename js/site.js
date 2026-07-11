@@ -179,4 +179,167 @@
     document.body.removeChild(ta);
   }
 
+  // ── Book listing & detail view ───────────────────────────────────
+  var bookReader = document.querySelector('.reader');
+  if (bookReader) {
+    var bookWorks = bookReader.querySelector('.works');
+    var bookPieces = bookWorks ? Array.prototype.slice.call(bookWorks.querySelectorAll('.piece')) : [];
+
+    if (bookPieces.length) {
+
+      var showBookDetail = function (id) {
+        var art = document.getElementById(id);
+        if (!art) return;
+        bookPieces.forEach(function (p) { p.classList.remove('is-active'); });
+        art.classList.add('is-active');
+        bookReader.classList.remove('in-listing');
+        bookReader.classList.add('in-detail');
+        history.pushState(null, '', '#' + id);
+        window.scrollTo(0, 0);
+        applyLanguage(currentLang);
+      };
+
+      var showBookListing = function () {
+        bookPieces.forEach(function (p) { p.classList.remove('is-active'); });
+        bookReader.classList.remove('in-detail');
+        bookReader.classList.add('in-listing');
+        var h = window.location.hash;
+        if (h && h !== '#top') {
+          history.pushState(null, '', window.location.pathname + window.location.search);
+        }
+        window.scrollTo(0, 0);
+        applyLanguage(currentLang);
+      };
+
+      // Build card grid
+      var bookListing = document.createElement('div');
+      bookListing.className = 'book-listing';
+      bookListing.id = 'book-listing';
+      var articleGrid = document.createElement('div');
+      articleGrid.className = 'article-grid';
+
+      bookPieces.forEach(function (article) {
+        var kicker = article.querySelector('.kicker');
+        var h3 = article.querySelector('h3');
+        if (!kicker && !h3) return;
+
+        var card = document.createElement('button');
+        card.className = 'article-card';
+        card.type = 'button';
+
+        if (kicker && h3) {
+          // Standard layout: kicker label + title
+          var ks = document.createElement('span');
+          ks.className = 'card-kicker';
+          ['ne', 'en', 'hi'].forEach(function (l) {
+            var v = kicker.getAttribute('data-' + l);
+            if (v !== null) ks.setAttribute('data-' + l, v);
+          });
+          ks.textContent = kicker.getAttribute('data-ne') || kicker.textContent;
+
+          var ts = document.createElement('span');
+          ts.className = 'card-title';
+          ['ne', 'en', 'hi'].forEach(function (l) {
+            var v = h3.getAttribute('data-' + l);
+            if (v !== null) ts.setAttribute('data-' + l, v);
+          });
+          ts.textContent = h3.getAttribute('data-ne') || h3.textContent;
+
+          card.appendChild(ks);
+          card.appendChild(ts);
+        } else {
+          // Kicker-only (e.g. numbered muktaks) — use kicker as the card title
+          var titleEl = kicker || h3;
+          var ts2 = document.createElement('span');
+          ts2.className = 'card-title';
+          ['ne', 'en', 'hi'].forEach(function (l) {
+            var v = titleEl.getAttribute('data-' + l);
+            if (v !== null) ts2.setAttribute('data-' + l, v);
+          });
+          ts2.textContent = titleEl.getAttribute('data-ne') || titleEl.textContent;
+          card.appendChild(ts2);
+        }
+
+        var artId = article.id;
+        card.addEventListener('click', function () { showBookDetail(artId); });
+        articleGrid.appendChild(card);
+      });
+
+      bookListing.appendChild(articleGrid);
+      bookReader.insertBefore(bookListing, bookReader.firstChild);
+
+      // Add back button + repurpose bottom top-link for each article
+      bookPieces.forEach(function (article) {
+        var backBtn = document.createElement('button');
+        backBtn.type = 'button';
+        backBtn.className = 'back-to-list';
+        backBtn.setAttribute('data-ne', '← सूचीमा');
+        backBtn.setAttribute('data-en', '← Back to list');
+        backBtn.setAttribute('data-hi', '← सूची पर वापस');
+        backBtn.textContent = '← सूचीमा';
+        backBtn.addEventListener('click', showBookListing);
+        article.insertBefore(backBtn, article.firstChild);
+
+        // Also add a back button at the bottom, before the existing top-link
+        var topLink = article.querySelector('.top-link');
+        var backBtnBottom = document.createElement('button');
+        backBtnBottom.type = 'button';
+        backBtnBottom.className = 'back-to-list';
+        backBtnBottom.setAttribute('data-ne', '← सूचीमा');
+        backBtnBottom.setAttribute('data-en', '← Back to list');
+        backBtnBottom.setAttribute('data-hi', '← सूची पर वापस');
+        backBtnBottom.textContent = '← सूचीमा';
+        backBtnBottom.addEventListener('click', showBookListing);
+        if (topLink) {
+          topLink.parentNode.insertBefore(backBtnBottom, topLink);
+        } else {
+          article.appendChild(backBtnBottom);
+        }
+      });
+
+      // TOC link delegation: open articles via card view
+      bookReader.addEventListener('click', function (e) {
+        var ta = e.target.closest('.toc a[href^="#"]');
+        if (ta) {
+          var tid = ta.getAttribute('href').slice(1);
+          var tt = document.getElementById(tid);
+          if (tt && tt.classList.contains('piece')) {
+            e.preventDefault();
+            showBookDetail(tid);
+          }
+        }
+      });
+
+      // Initial state based on URL hash
+      var initHash = window.location.hash.slice(1);
+      if (initHash) {
+        var initTarget = document.getElementById(initHash);
+        if (initTarget && initTarget.classList.contains('piece')) {
+          showBookDetail(initHash);
+        } else {
+          showBookListing();
+        }
+      } else {
+        showBookListing();
+      }
+
+      // Browser back/forward
+      window.addEventListener('popstate', function () {
+        var h = window.location.hash.slice(1);
+        if (h) {
+          var t = document.getElementById(h);
+          if (t && t.classList.contains('piece')) { showBookDetail(h); return; }
+        }
+        showBookListing();
+      });
+
+      // Escape to return to listing
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && bookReader.classList.contains('in-detail')) {
+          showBookListing();
+        }
+      });
+    }
+  }
+
 })();

@@ -760,3 +760,75 @@ details.toc-fold summary{
   .work-hero .hero-cover{ display:none; }
   .piece h3{ color:black; }
 }
+
+/* ────────────────────────────────────────────────────────────
+   Book listing / detail view
+   ──────────────────────────────────────────────────────────── */
+.reader.in-listing,
+.reader.in-detail { display:block; }
+
+/* hide the sticky TOC sidebar in both modes */
+.reader.in-listing .toc-fold,
+.reader.in-detail  .toc-fold { display:none; }
+
+/* listing mode: hide article works, show the card grid */
+.reader.in-listing .works    { display:none; }
+.reader.in-listing .book-listing { display:block; }
+
+/* detail mode: hide the card grid and all frontmatter */
+.reader.in-detail .book-listing { display:none; }
+.reader.in-detail .frontmatter  { display:none; }
+
+/* detail mode: hide all pieces except the active one */
+.reader.in-detail .piece          { display:none; }
+.reader.in-detail .piece.is-active{ display:block; border-bottom:none; }
+
+/* ── Card grid ────────────────────────────────── */
+.book-listing{ display:none; padding:1.5rem 0 4rem; }
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap:.8rem;
+}
+
+.article-card{
+  display:flex; flex-direction:column; gap:.3rem;
+  padding:1rem 1.15rem .95rem;
+  background:var(--cream); border:1px solid var(--line); border-radius:6px;
+  cursor:pointer; font-family:var(--body); color:var(--ink);
+  text-align:left; width:100%; position:relative;
+  transition:border-color .15s, box-shadow .15s, transform .15s;
+}
+.article-card:hover{
+  border-color:var(--gold);
+  box-shadow:0 3px 14px rgba(41,32,24,.11);
+  transform:translateY(-2px);
+}
+.article-card::after{
+  content:'›';
+  position:absolute; right:.9rem; top:50%; transform:translateY(-50%);
+  color:var(--line); font-size:1.3rem;
+  transition:color .15s, right .15s;
+}
+.article-card:hover::after{ color:var(--gold); right:.7rem; }
+
+.card-kicker{
+  font-family:var(--ui); font-size:.7rem;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--sindoor);
+}
+.card-title{
+  font-size:.97rem; line-height:1.45; font-weight:600; padding-right:1.2rem;
+}
+
+/* ── Back-to-list button (top of article) ────── */
+.back-to-list{
+  display:inline-flex; align-items:center; gap:.35rem;
+  padding:.38rem .85rem; background:none;
+  border:1px solid var(--line); border-radius:4px;
+  font-family:var(--ui); font-size:.85rem; color:var(--ink-soft);
+  cursor:pointer; margin-bottom:1.6rem;
+  transition:border-color .15s, color .15s;
+}
+.back-to-list:hover{ border-color:var(--sindoor); color:var(--sindoor); }
+
