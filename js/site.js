@@ -116,6 +116,15 @@
       if (text !== null) el.textContent = text;
     });
 
+    // Bilingual display for piece/article titles: show "Translation — नेपाली मूल"
+    if (lang !== 'ne') {
+      document.querySelectorAll('.piece h3[data-ne]').forEach(function (el) {
+        var ne = el.getAttribute('data-ne');
+        var tr = el.getAttribute('data-' + lang) || ne;
+        if (tr && ne && tr !== ne) el.textContent = tr + ' — ' + ne;
+      });
+    }
+
     document.documentElement.lang = lang === 'en' ? 'en' : lang === 'hi' ? 'hi' : 'ne';
   }
 
@@ -343,8 +352,7 @@
         backBtn.addEventListener('click', showBookListing);
         article.insertBefore(backBtn, article.firstChild);
 
-        // Also add a back button at the bottom, before the existing top-link
-        var topLink = article.querySelector('.top-link');
+        // Add a back button at the bottom of the article
         var backBtnBottom = document.createElement('button');
         backBtnBottom.type = 'button';
         backBtnBottom.className = 'back-to-list';
@@ -353,11 +361,7 @@
         backBtnBottom.setAttribute('data-hi', '← सूची पर वापस');
         backBtnBottom.textContent = '← सूचीमा';
         backBtnBottom.addEventListener('click', showBookListing);
-        if (topLink) {
-          topLink.parentNode.insertBefore(backBtnBottom, topLink);
-        } else {
-          article.appendChild(backBtnBottom);
-        }
+        article.appendChild(backBtnBottom);
       });
 
       // TOC link delegation: open articles via card view

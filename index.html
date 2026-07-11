@@ -90,14 +90,14 @@
     </button>
     <div class="nav-wrap">
     <nav class="site-nav" id="main-nav" aria-label="मुख्य">
-      <a href="index.html" aria-current="page">गृहपृष्ठ</a>
-      <a href="parichay.html">परिचय</a>
-      <a href="rachana.html">नयाँ रचनाहरू</a>
-      <a href="books/man-ra-ma.html">मन र म</a>
-      <a href="books/prakaran.html">प्रकरण</a>
-      <a href="books/dochhaya.html">दोछाया</a>
-      <a href="books/shoshitka-shabdaharu.html">शोषितका शब्दहरू</a>
-      <a href="books/ujyalo-khojdai.html">उज्यालो खोज्दै</a>
+      <a href="index.html" aria-current="page" data-ne="गृहपृष्ठ" data-en="Home" data-hi="मुख्य पृष्ठ">गृहपृष्ठ</a>
+      <a href="parichay.html" data-ne="परिचय" data-en="About" data-hi="परिचय">परिचय</a>
+      <a href="rachana.html" data-ne="नयाँ रचनाहरू" data-en="New Works" data-hi="नई रचनाएँ">नयाँ रचनाहरू</a>
+      <a href="books/man-ra-ma.html" data-ne="मन र म" data-en="Man ra Ma" data-hi="मन र मैं">मन र म</a>
+      <a href="books/prakaran.html" data-ne="प्रकरण" data-en="Prakaran" data-hi="प्रकरण">प्रकरण</a>
+      <a href="books/dochhaya.html" data-ne="दोछाया" data-en="Dochhaya" data-hi="दोछाया">दोछाया</a>
+      <a href="books/shoshitka-shabdaharu.html" data-ne="शोषितका शब्दहरू" data-en="Shoshitka Shabdaharu" data-hi="शोषित के शब्द">शोषितका शब्दहरू</a>
+      <a href="books/ujyalo-khojdai.html" data-ne="उज्यालो खोज्दै" data-en="Ujyalo Khojdai" data-hi="उज्यालो खोज्दै">उज्यालो खोज्दै</a>
     </nav>
     </div>
     <div class="lang-switcher" aria-label="Language / भाषा">
@@ -112,7 +112,7 @@
 <main id="main-content">
   <section class="hero">
     <div class="wrap">
-      <span class="invocation">बिजनबारी · दार्जीलिङ</span>
+      <span class="invocation" data-ne="बिजनबारी · दार्जीलिङ" data-en="Bijanbari · Darjeeling" data-hi="बिजनबारी · दार्जीलिंग">बिजनबारी · दार्जीलिङ</span>
       <h1>मुक्तिनाथ शर्मा 'शोषित'</h1>
       <div class="latin">MUKTINATH SHARMA 'SHOSHIT'</div>
       <div>
@@ -125,8 +125,8 @@
         <p class="lede trans lang-hi" lang="hi" hidden>दार्जीलिंग की पहाड़ियों की मिट्टी, पसीने और आत्मसम्मान की आवाज़ — भारतीय नेपाली साहित्य में चार दशकों से भी अधिक की रचना-यात्रा।</p>
       </div>
       <div class="cta-row">
-        <a class="btn solid" href="#kriti">प्रकाशित कृतिहरू</a>
-        <a class="btn" href="parichay.html">परिचय पढ्नुहोस्</a>
+        <a class="btn solid" href="#kriti" data-ne="प्रकाशित कृतिहरू" data-en="Published Works" data-hi="प्रकाशित कृतियाँ">प्रकाशित कृतिहरू</a>
+        <a class="btn" href="parichay.html" data-ne="परिचय पढ्नुहोस्" data-en="Read the Profile" data-hi="परिचय पढ़ें">परिचय पढ्नुहोस्</a>
       </div>
     </div>
     <svg class="ridge" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
@@ -136,7 +136,7 @@
 
   <section class="section" id="kriti">
     <div class="section-head">
-      <h2>प्रकाशित कृतिहरू</h2>
+      <h2 data-ne="प्रकाशित कृतिहरू" data-en="Published Works" data-hi="प्रकाशित कृतियाँ">प्रकाशित कृतिहरू</h2>
       <div class="rule"></div>
     </div>
 
@@ -145,35 +145,45 @@
         <div class="cover cover-img">
           <img src="images/covers/man-ra-ma-cover.jpg" alt="मन र म — मुक्तिनाथ शर्मा 'शोषित'" loading="lazy">
         </div>
-        <p class="below"><strong>मन र म · २००६</strong> — ५६ कविताहरू · आमा, दशैं, दार्जीलिङ, कर्तव्य…</p>
+        <p class="below trans lang-ne"><strong>मन र म · २००६</strong> — ५६ कविताहरू · आमा, दशैं, दार्जीलिङ, कर्तव्य…</p>
+        <p class="below trans lang-en" lang="en" hidden><strong>Man ra Ma · 2006</strong> — 56 poems · mother, Dashain, Darjeeling, duty…</p>
+        <p class="below trans lang-hi" lang="hi" hidden><strong>मन र मैं · २००६</strong> — ५६ कविताएँ · माँ, दशैं, दार्जीलिंग, कर्तव्य…</p>
       </a>
 
       <a class="book" href="books/prakaran.html">
         <div class="cover cover-img">
           <img src="images/covers/prakaran-cover.png" alt="प्रकरण — मुक्तिनाथ शर्मा 'शोषित'" loading="lazy">
         </div>
-        <p class="below"><strong>प्रकरण · २०११</strong> — २० निबन्धहरू · विश्वास, भूत, कालो, आँखा र आँसु…</p>
+        <p class="below trans lang-ne"><strong>प्रकरण · २०११</strong> — २० निबन्धहरू · विश्वास, भूत, कालो, आँखा र आँसु…</p>
+        <p class="below trans lang-en" lang="en" hidden><strong>Prakaran · 2011</strong> — 20 essays · faith, ghosts, black, eyes and tears…</p>
+        <p class="below trans lang-hi" lang="hi" hidden><strong>प्रकरण · २०११</strong> — २० निबंध · विश्वास, भूत, काला, आँखें और आँसू…</p>
       </a>
 
       <a class="book" href="books/dochhaya.html">
         <div class="cover cover-img">
           <img src="images/covers/dochhaya-cover.jpg" alt="दोछाया — मुक्तिनाथ शर्मा 'शोषित'" loading="lazy">
         </div>
-        <p class="below"><strong>दोछाया · २०२३</strong> — २० कथाहरू · मिरिना, रमा, सिरुपाते, एउटी आमा…</p>
+        <p class="below trans lang-ne"><strong>दोछाया · २०२३</strong> — २० कथाहरू · मिरिना, रमा, सिरुपाते, एउटी आमा…</p>
+        <p class="below trans lang-en" lang="en" hidden><strong>Dochhaya · 2023</strong> — 20 stories · Mirina, Rama, Sirupate, a mother…</p>
+        <p class="below trans lang-hi" lang="hi" hidden><strong>दोछाया · २०२३</strong> — २० कहानियाँ · मिरिना, रमा, सिरुपाते, एक माँ…</p>
       </a>
 
       <a class="book" href="books/shoshitka-shabdaharu.html">
         <div class="cover cover-img">
           <img src="images/covers/shoshitka-shabdaharu-cover.png" alt="शोषितका शब्दहरू — मुक्तिनाथ शर्मा 'शोषित'" loading="lazy">
         </div>
-        <p class="below"><strong>शोषितका शब्दहरू · २०२५</strong> — ३३ कविताहरू · आमा, बाउ, जिन्दगी…</p>
+        <p class="below trans lang-ne"><strong>शोषितका शब्दहरू · २०२५</strong> — ३३ कविताहरू · आमा, बाउ, जिन्दगी…</p>
+        <p class="below trans lang-en" lang="en" hidden><strong>Shoshitka Shabdaharu · 2025</strong> — 33 poems · mother, father, life…</p>
+        <p class="below trans lang-hi" lang="hi" hidden><strong>शोषित के शब्द · २०२५</strong> — ३३ कविताएँ · माँ, बाबा, जिंदगी…</p>
       </a>
 
       <a class="book" href="books/ujyalo-khojdai.html">
         <div class="cover cover-img">
           <img src="images/covers/ujyalo-khojdai-cover.png" alt="उज्यालो खोज्दै — मुक्तिनाथ शर्मा 'शोषित'" loading="lazy">
         </div>
-        <p class="below"><strong>उज्यालो खोज्दै · २०२५</strong> — ५२ मुक्तकहरू · माया, प्रकृति, अस्मिता…</p>
+        <p class="below trans lang-ne"><strong>उज्यालो खोज्दै · २०२५</strong> — ५२ मुक्तकहरू · माया, प्रकृति, अस्मिता…</p>
+        <p class="below trans lang-en" lang="en" hidden><strong>Ujyalo Khojdai · 2025</strong> — 52 muktaks · love, nature, identity…</p>
+        <p class="below trans lang-hi" lang="hi" hidden><strong>उज्यालो खोज्दै · २०२५</strong> — ५२ मुक्तक · प्रेम, प्रकृति, अस्मिता…</p>
       </a>
     </div>
   </section>
@@ -240,11 +250,11 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h4>शोषितका शब्दहरू</h4>
-        <p>मुक्तिनाथ शर्मा 'शोषित'का साहित्यिक कृतिहरूको आधिकारिक डिजिटल सङ्ग्रह — बिजनबारी, दार्जीलिङ, पश्चिम बङ्गाल, भारत।</p>
+        <h4 data-ne="शोषितका शब्दहरू" data-en="Shoshitka Shabdaharu" data-hi="शोषित के शब्द">शोषितका शब्दहरू</h4>
+        <p data-ne="मुक्तिनाथ शर्मा &#x2018;शोषित&#x2019;का साहित्यिक कृतिहरूको आधिकारिक डिजिटल सङ्ग्रह — बिजनबारी, दार्जीलिङ, पश्चिम बङ्गाल, भारत।" data-en="Official digital archive of the literary works of Muktinath Sharma &#x2018;Shoshit&#x2019; — Bijanbari, Darjeeling, West Bengal, India." data-hi="मुक्तिनाथ शर्मा &#x2018;शोषित&#x2019; की साहित्यिक कृतियों का आधिकारिक डिजिटल संग्रह — बिजनबारी, दार्जीलिंग, पश्चिम बंगाल, भारत।">मुक्तिनाथ शर्मा 'शोषित'का साहित्यिक कृतिहरूको आधिकारिक डिजिटल सङ्ग्रह — बिजनबारी, दार्जीलिङ, पश्चिम बङ्गाल, भारत।</p>
       </div>
       <div>
-        <h4>सम्पर्क</h4>
+        <h4 data-ne="सम्पर्क" data-en="Contact" data-hi="संपर्क">सम्पर्क</h4>
         <ul class="contact-list">
           <li>✉ <a href="mailto:muktinathshoshit@gmail.com">muktinathshoshit@gmail.com</a></li>
           <li>☎ <a href="https://wa.me/+917478569175" rel="noopener noreferrer">WhatsApp: +91 74785 69175</a></li>
