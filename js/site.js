@@ -40,7 +40,7 @@
   function applyTheme(dark) {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
     if (themeBtn) {
-      themeBtn.textContent = dark ? '☀' : '☾';
+      themeBtn.textContent = dark ? '☀ Light' : '☾ Dark';
       themeBtn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
       themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
     }
@@ -126,16 +126,6 @@
     }
 
     document.documentElement.lang = lang === 'en' ? 'en' : lang === 'hi' ? 'hi' : 'ne';
-
-    // Sync cycle button
-    var cycleBtn = document.getElementById('lang-cycle');
-    if (cycleBtn) {
-      var LANG_ABBR = { ne: 'ने', en: 'EN', hi: 'हि' };
-      var LANG_NEXT_LABEL = { ne: 'Switch to English', en: 'हिन्दीमा जानुहोस्', hi: 'नेपालीमा जानुहोस्' };
-      cycleBtn.textContent = LANG_ABBR[lang] || lang.toUpperCase();
-      cycleBtn.setAttribute('aria-label', LANG_NEXT_LABEL[lang] || 'Switch language');
-      cycleBtn.setAttribute('title', LANG_NEXT_LABEL[lang] || 'Switch language');
-    }
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -144,18 +134,39 @@
     });
   });
 
-  // Cycle button: tap to rotate ne → en → hi → ne
-  var LANG_CYCLE_ORDER = ['ne', 'en', 'hi'];
-  var langCycleBtn = document.getElementById('lang-cycle');
-  if (langCycleBtn) {
-    langCycleBtn.addEventListener('click', function () {
-      var idx = LANG_CYCLE_ORDER.indexOf(currentLang);
-      applyLanguage(LANG_CYCLE_ORDER[(idx + 1) % LANG_CYCLE_ORDER.length]);
-    });
-  }
-
   // Apply on load
   applyLanguage(currentLang);
+
+  // ── Settings panel ───────────────────────────────────────────────
+  var settingsPanel = document.getElementById('settings-panel');
+  var settingsToggle = document.getElementById('settings-toggle');
+  var settingsClose = document.getElementById('settings-close');
+  var settingsBackdrop = settingsPanel && settingsPanel.querySelector('.settings-backdrop');
+
+  function openSettings() {
+    if (!settingsPanel) return;
+    settingsPanel.classList.add('is-open');
+    settingsPanel.setAttribute('aria-hidden', 'false');
+    if (settingsToggle) settingsToggle.setAttribute('aria-expanded', 'true');
+    if (settingsClose) settingsClose.focus();
+  }
+
+  function closeSettings() {
+    if (!settingsPanel) return;
+    settingsPanel.classList.remove('is-open');
+    settingsPanel.setAttribute('aria-hidden', 'true');
+    if (settingsToggle) settingsToggle.setAttribute('aria-expanded', 'false');
+    if (settingsToggle) settingsToggle.focus();
+  }
+
+  if (settingsToggle) settingsToggle.addEventListener('click', openSettings);
+  if (settingsClose) settingsClose.addEventListener('click', closeSettings);
+  if (settingsBackdrop) settingsBackdrop.addEventListener('click', closeSettings);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && settingsPanel && settingsPanel.classList.contains('is-open')) {
+      closeSettings();
+    }
+  });
 
   // ── Auto-generate share buttons ───────────────────────────────────
   function buildShareStrip(piece) {

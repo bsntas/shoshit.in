@@ -82,20 +82,9 @@
       <a href="dochhaya.html" aria-current="page" data-ne="दोछाया" data-en="Dochhaya" data-hi="दोछाया">दोछाया</a>
       <a href="shoshitka-shabdaharu.html" data-ne="शोषितका शब्दहरू" data-en="Shoshitka Shabdaharu" data-hi="शोषित के शब्द">शोषितका शब्दहरू</a>
       <a href="ujyalo-khojdai.html" data-ne="उज्यालो खोज्दै" data-en="Ujyalo Khojdai" data-hi="उज्यालो खोज्दै">उज्यालो खोज्दै</a>
-      <div class="lang-switcher lang-mobile-nav" aria-label="Language / भाषा">
-        <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
-        <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हि</button>
-      </div>
     </nav>
     </div>
-    <div class="lang-switcher" aria-label="Language / भाषा">
-      <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
-      <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
-      <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हि</button>
-    </div>
-    <button id="lang-cycle" aria-label="Switch language" title="भाषा बदल्नुहोस्">ने</button>
-    <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">☾</button>
+    <button id="settings-toggle" aria-label="Settings" aria-expanded="false" title="Settings">⚙</button>
   </div>
 </header>
 
@@ -2311,6 +2300,31 @@ These days I have been drinking quite a lot.</div>
 </footer>
 
 <button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<div id="settings-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="settings-panel-title">
+  <div class="settings-backdrop"></div>
+  <div class="settings-drawer">
+    <div class="settings-head">
+      <span id="settings-panel-title" class="settings-title" data-ne="सेटिङ" data-en="Settings" data-hi="सेटिंग">सेटिङ</span>
+      <button id="settings-close" aria-label="बन्द गर्नुहोस्">✕</button>
+    </div>
+    <div class="settings-body">
+      <div class="settings-section">
+        <p class="settings-label" data-ne="भाषा" data-en="Language" data-hi="भाषा">भाषा</p>
+        <div class="lang-switcher" aria-label="Language / भाषा">
+          <button class="lang-btn active" data-lang="ne" aria-pressed="true" title="नेपाली">नेपाली</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">English</button>
+          <button class="lang-btn" data-lang="hi" aria-pressed="false" title="हिन्दी">हिन्दी</button>
+        </div>
+      </div>
+      <div class="settings-section">
+        <p class="settings-label" data-ne="थिम" data-en="Theme" data-hi="थीम">थिम</p>
+        <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">☾ Dark</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="../js/site.js"></script>
 </body>
 </html>
