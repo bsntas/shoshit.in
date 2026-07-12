@@ -164,6 +164,13 @@ a:focus-visible, button:focus-visible{
   display:block;
   border-radius:7px;
 }
+.logo-dark{ display:none; }
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .logo-light{ display:none; }
+  :root:not([data-theme="light"]) .logo-dark{ display:block; }
+}
+[data-theme="dark"] .logo-light{ display:none; }
+[data-theme="dark"] .logo-dark{ display:block; }
 .nav-wrap{
   position:relative; flex:1 1 0; min-width:0;
   overflow:hidden;
