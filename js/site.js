@@ -259,11 +259,25 @@
 
     if (bookPieces.length) {
 
+      var occasionGroups = bookWorks
+        ? Array.prototype.slice.call(bookWorks.querySelectorAll('.occasion-group'))
+        : [];
+
       var showBookDetail = function (id) {
         var art = document.getElementById(id);
         if (!art) return;
         bookPieces.forEach(function (p) { p.classList.remove('is-active'); });
         art.classList.add('is-active');
+        // Activate only the occasion-group immediately preceding this piece
+        occasionGroups.forEach(function (og) { og.classList.remove('is-active'); });
+        var prev = art.previousElementSibling;
+        while (prev) {
+          if (prev.classList.contains('occasion-group')) {
+            prev.classList.add('is-active');
+            break;
+          }
+          prev = prev.previousElementSibling;
+        }
         bookReader.classList.remove('in-listing');
         bookReader.classList.add('in-detail');
         history.pushState(null, '', '#' + id);
@@ -273,6 +287,7 @@
 
       var showBookListing = function () {
         bookPieces.forEach(function (p) { p.classList.remove('is-active'); });
+        occasionGroups.forEach(function (og) { og.classList.remove('is-active'); });
         bookReader.classList.remove('in-detail');
         bookReader.classList.add('in-listing');
         var h = window.location.hash;
