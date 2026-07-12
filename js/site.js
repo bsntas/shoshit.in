@@ -340,6 +340,13 @@
       bookListing.appendChild(articleGrid);
       bookReader.insertBefore(bookListing, bookReader.firstChild);
 
+      // Move frontmatter sections (dedication, foreword, etc.) before the card grid
+      // so they appear in listing view. CSS hides them in detail view.
+      var frontmatters = bookWorks ? Array.prototype.slice.call(bookWorks.querySelectorAll('.frontmatter')) : [];
+      frontmatters.forEach(function (fm) {
+        bookReader.insertBefore(fm, bookListing);
+      });
+
       // Add back button + repurpose bottom top-link for each article
       bookPieces.forEach(function (article) {
         var backBtn = document.createElement('button');
