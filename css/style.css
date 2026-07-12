@@ -225,6 +225,19 @@ a:focus-visible, button:focus-visible{
   background:var(--sindoor); border-color:var(--sindoor); color:#fff;
 }
 
+/* ── mobile lang-switcher (inside dropdown) ── */
+.lang-mobile-nav{ display:none; }   /* hidden on desktop */
+@media (max-width:700px){
+  /* hide the header copy; show the dropdown copy */
+  .lang-switcher:not(.lang-mobile-nav){ display:none; }
+  .lang-mobile-nav{
+    display:flex; gap:.25rem;
+    margin-top:.5rem; padding-top:.6rem;
+    border-top:1px dotted var(--line);
+    flex-shrink:0;
+  }
+}
+
 /* ── mobile nav hamburger ── */
 #nav-toggle{
   display:none; background:none; border:none; cursor:pointer;
