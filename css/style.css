@@ -950,12 +950,14 @@ details.toc-fold summary{
   background:none; border:none; color:var(--sindoor);
 }
 
-.reader[data-font-size="sm"] .verse,
-.reader[data-font-size="sm"] .prose,
-.reader[data-font-size="sm"] .prose-flow{ font-size:.93rem; }
-.reader[data-font-size="lg"] .verse,
-.reader[data-font-size="lg"] .prose,
-.reader[data-font-size="lg"] .prose-flow{ font-size:1.18rem; }
+html[data-font-size="sm"] .verse,
+html[data-font-size="sm"] .prose,
+html[data-font-size="sm"] .prose-flow,
+html[data-font-size="sm"] .parichay-verse{ font-size:.93rem; }
+html[data-font-size="lg"] .verse,
+html[data-font-size="lg"] .prose,
+html[data-font-size="lg"] .prose-flow,
+html[data-font-size="lg"] .parichay-verse{ font-size:1.18rem; }
 
 /* ────────────────────────────────────────────────────────────
    Print styles
