@@ -126,6 +126,13 @@
     }
 
     document.documentElement.lang = lang === 'en' ? 'en' : lang === 'hi' ? 'hi' : 'ne';
+
+    // Sync reader toolbar lang button
+    var toolbarLangCycle = document.getElementById('toolbar-lang-cycle');
+    if (toolbarLangCycle) {
+      var TOOLBAR_ABBR = { ne: 'ने', en: 'EN', hi: 'हि' };
+      toolbarLangCycle.textContent = TOOLBAR_ABBR[lang] || lang.toUpperCase();
+    }
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -167,6 +174,16 @@
       closeSettings();
     }
   });
+
+  // ── Reader toolbar lang cycle ────────────────────────────────────
+  var LANG_CYCLE_ORDER = ['ne', 'en', 'hi'];
+  var toolbarLangCycleBtn = document.getElementById('toolbar-lang-cycle');
+  if (toolbarLangCycleBtn) {
+    toolbarLangCycleBtn.addEventListener('click', function () {
+      var idx = LANG_CYCLE_ORDER.indexOf(currentLang);
+      applyLanguage(LANG_CYCLE_ORDER[(idx + 1) % LANG_CYCLE_ORDER.length]);
+    });
+  }
 
   // ── Auto-generate share buttons ───────────────────────────────────
   function buildShareStrip(piece) {
@@ -250,37 +267,23 @@
     document.body.removeChild(ta);
   }
 
-  // ── Font size controls (reader pages) ───────────────────────────
+  // ── Font size controls ───────────────────────────────────────────
   var FONT_SIZE_KEY = 'shoshit-fontsize';
   var readerEl = document.querySelector('.reader');
-  if (readerEl) {
-    var savedSize = localStorage.getItem(FONT_SIZE_KEY) || 'md';
-    readerEl.setAttribute('data-font-size', savedSize);
 
-    var fsContainer = document.createElement('div');
-    fsContainer.className = 'font-size-controls';
-    fsContainer.setAttribute('aria-label', 'Font size');
-    fsContainer.innerHTML =
-      '<span class="font-size-label">अक्षर ·</span>' +
-      '<button class="font-size-btn" data-size="sm" title="Smaller text">A−</button>' +
-      '<button class="font-size-btn" data-size="md" title="Default text">A</button>' +
-      '<button class="font-size-btn" data-size="lg" title="Larger text">A+</button>';
-
-    var worksEl = readerEl.querySelector('.works');
-    if (worksEl) worksEl.insertBefore(fsContainer, worksEl.firstChild);
-
-    fsContainer.querySelectorAll('.font-size-btn').forEach(function (btn) {
-      if (btn.dataset.size === savedSize) btn.classList.add('active');
-      btn.addEventListener('click', function () {
-        var size = btn.dataset.size;
-        readerEl.setAttribute('data-font-size', size);
-        try { localStorage.setItem(FONT_SIZE_KEY, size); } catch (e) {}
-        fsContainer.querySelectorAll('.font-size-btn').forEach(function (b) {
-          b.classList.toggle('active', b.dataset.size === size);
-        });
-      });
+  function applyFontSize(size) {
+    try { localStorage.setItem(FONT_SIZE_KEY, size); } catch (e) {}
+    if (readerEl) readerEl.setAttribute('data-font-size', size);
+    document.querySelectorAll('.font-size-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.size === size);
     });
   }
+
+  document.querySelectorAll('.font-size-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { applyFontSize(btn.dataset.size); });
+  });
+
+  applyFontSize(localStorage.getItem(FONT_SIZE_KEY) || 'md');
 
   // ── Book listing & detail view ───────────────────────────────────
   var bookReader = document.querySelector('.reader');
@@ -314,6 +317,8 @@
         history.pushState(null, '', '#' + id);
         window.scrollTo(0, 0);
         applyLanguage(currentLang);
+        var toolbar = document.getElementById('reader-toolbar');
+        if (toolbar) { toolbar.classList.add('is-visible'); toolbar.setAttribute('aria-hidden', 'false'); }
       };
 
       var showBookListing = function () {
@@ -327,6 +332,8 @@
         }
         window.scrollTo(0, 0);
         applyLanguage(currentLang);
+        var toolbar = document.getElementById('reader-toolbar');
+        if (toolbar) { toolbar.classList.remove('is-visible'); toolbar.setAttribute('aria-hidden', 'true'); }
       };
 
       // Build card grid

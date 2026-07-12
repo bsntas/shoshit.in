@@ -2301,6 +2301,14 @@ These days I have been drinking quite a lot.</div>
 
 <button id="back-top" aria-label="Back to top" title="Back to top">↑</button>
 
+<div id="reader-toolbar" aria-hidden="true" aria-label="Reading controls">
+  <button id="toolbar-lang-cycle" class="toolbar-btn" title="भाषा बदल्नुहोस्">ने</button>
+  <span class="toolbar-sep" aria-hidden="true"></span>
+  <button class="toolbar-btn font-size-btn" data-size="sm" title="Smaller text">A−</button>
+  <button class="toolbar-btn font-size-btn" data-size="md" title="Default text">A</button>
+  <button class="toolbar-btn font-size-btn" data-size="lg" title="Larger text">A+</button>
+</div>
+
 <div id="settings-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="settings-panel-title">
   <div class="settings-backdrop"></div>
   <div class="settings-drawer">
@@ -2320,6 +2328,14 @@ These days I have been drinking quite a lot.</div>
       <div class="settings-section">
         <p class="settings-label" data-ne="थिम" data-en="Theme" data-hi="थीम">थिम</p>
         <button id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">☾ Dark</button>
+      </div>
+      <div class="settings-section">
+        <p class="settings-label" data-ne="अक्षर आकार" data-en="Font Size" data-hi="अक्षर आकार">अक्षर आकार</p>
+        <div class="font-size-controls">
+          <button class="font-size-btn" data-size="sm" title="Smaller text">A−</button>
+          <button class="font-size-btn active" data-size="md" title="Default text">A</button>
+          <button class="font-size-btn" data-size="lg" title="Larger text">A+</button>
+        </div>
       </div>
     </div>
   </div>
