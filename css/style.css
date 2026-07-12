@@ -896,7 +896,10 @@ details.toc-fold summary{
 .reader.in-detail .book-listing { display:none; }
 .reader.in-detail .frontmatter  { display:none; }
 
-/* detail mode: hide all pieces except the active one */
+/* hide all pieces before JS initializes (prevents flash of all stories) */
+.reader .piece { display:none; }
+
+/* detail mode: show only the active piece */
 .reader.in-detail .piece          { display:none; }
 .reader.in-detail .piece.is-active{ display:block; border-bottom:none; }
 
