@@ -572,7 +572,8 @@ details.toc-fold summary{
   padding-bottom:1.2rem;
   border-bottom:1px solid var(--line);
 }
-.fm-type{
+.fm-type,
+.frontmatter .kicker{
   font-family:var(--ui);
   font-size:.72rem;
   letter-spacing:.25em;
