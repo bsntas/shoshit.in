@@ -185,6 +185,14 @@
     });
   }
 
+  // Show toolbar on any text-intensive page: reader pages (listing + detail)
+  // and parichay (detected by .parichay-card presence)
+  var readerToolbarEl = document.getElementById('reader-toolbar');
+  if (readerToolbarEl && (readerEl || document.querySelector('.parichay-card'))) {
+    readerToolbarEl.classList.add('is-visible');
+    readerToolbarEl.setAttribute('aria-hidden', 'false');
+  }
+
   // ── Auto-generate share buttons ───────────────────────────────────
   function buildShareStrip(piece) {
     var strip = document.createElement('div');
@@ -273,7 +281,7 @@
 
   function applyFontSize(size) {
     try { localStorage.setItem(FONT_SIZE_KEY, size); } catch (e) {}
-    if (readerEl) readerEl.setAttribute('data-font-size', size);
+    document.documentElement.setAttribute('data-font-size', size);
     document.querySelectorAll('.font-size-btn').forEach(function (btn) {
       btn.classList.toggle('active', btn.dataset.size === size);
     });
@@ -333,7 +341,7 @@
         window.scrollTo(0, 0);
         applyLanguage(currentLang);
         var toolbar = document.getElementById('reader-toolbar');
-        if (toolbar) { toolbar.classList.remove('is-visible'); toolbar.setAttribute('aria-hidden', 'true'); }
+        if (toolbar) { toolbar.classList.add('is-visible'); toolbar.setAttribute('aria-hidden', 'false'); }
       };
 
       // Build card grid
