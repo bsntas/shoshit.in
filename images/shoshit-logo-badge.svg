@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9C878"/>
+      <stop offset="0.55" stop-color="#CFA14E"/>
+      <stop offset="1" stop-color="#A9762B"/>
+    </linearGradient>
+    <linearGradient id="goldBand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A9762B"/>
+      <stop offset="0.5" stop-color="#E9C878"/>
+      <stop offset="1" stop-color="#A9762B"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#121110"/>
+      <stop offset="0.5" stop-color="#3A3530"/>
+      <stop offset="1" stop-color="#121110"/>
+    </linearGradient>
+    <linearGradient id="bud" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#4F8C3C"/>
+      <stop offset="1" stop-color="#8FB865"/>
+    </linearGradient>
+  </defs>
+
+  <!-- cream card with golden border (kept from current logo) -->
+  <rect x="10" y="10" width="492" height="492" rx="72" fill="#F7F2E6" stroke="#C8973F" stroke-width="13"/>
+
+  <!-- ===== sapling ===== -->
+  <!-- stem rising from nib tip -->
+  <path d="M256 172 C252 154 259 138 256 118" fill="none" stroke="#2E5233" stroke-width="9" stroke-linecap="round"/>
+  <!-- left leaf -->
+  <path d="M252 130 C206 128 164 106 142 62 C192 64 234 90 252 130 Z" fill="#3B7A30" stroke="#285220" stroke-width="3"/>
+  <path d="M248 124 C214 112 182 92 158 70" fill="none" stroke="#1E4018" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- right leaf -->
+  <path d="M260 114 C306 112 348 90 370 46 C320 48 278 74 260 114 Z" fill="#4F8C3C" stroke="#285220" stroke-width="3"/>
+  <path d="M264 108 C298 96 330 76 354 54" fill="none" stroke="#1E4018" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- bud (सुइरो) -->
+  <path d="M256 122 C243 98 243 64 256 32 C269 64 269 98 256 122 Z" fill="url(#bud)" stroke="#285220" stroke-width="3"/>
+  <path d="M256 112 C253 88 258 62 256 42" fill="none" stroke="#2E5233" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- ===== pen ===== -->
+  <!-- nib pointing up -->
+  <path d="M256 168
+           C 238 202, 220 242, 214 288
+           C 210 322, 212 358, 222 394
+           L 222 406 L 290 406 L 290 394
+           C 300 358, 302 322, 298 288
+           C 292 242, 274 202, 256 168 Z"
+        fill="url(#gold)" stroke="#8A6224" stroke-width="4"/>
+  <!-- slit continuing the stem -->
+  <path d="M256 182 L256 322" stroke="#F7F2E6" stroke-width="7" stroke-linecap="round"/>
+  <!-- breather hole -->
+  <circle cx="256" cy="338" r="13" fill="#F7F2E6"/>
+  <!-- ferrule band -->
+  <rect x="204" y="404" width="104" height="34" rx="11" fill="url(#goldBand)"/>
+  <!-- pen body -->
+  <rect x="196" y="436" width="120" height="52" rx="16" fill="url(#body)"/>
+</svg>
