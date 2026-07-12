@@ -900,9 +900,11 @@ details.toc-fold summary{
 /* hide all pieces before JS initializes (prevents flash of all stories) */
 .reader .piece { display:none; }
 
-/* detail mode: show only the active piece */
-.reader.in-detail .piece          { display:none; }
-.reader.in-detail .piece.is-active{ display:block; border-bottom:none; }
+/* detail mode: show only the active piece and its occasion heading */
+.reader.in-detail .piece                    { display:none; }
+.reader.in-detail .piece.is-active          { display:block; border-bottom:none; }
+.reader.in-detail .occasion-group           { display:none; }
+.reader.in-detail .occasion-group.is-active { display:block; }
 
 /* ── Card grid ────────────────────────────────── */
 .book-listing{ display:none; padding:1.5rem 0 4rem; }
