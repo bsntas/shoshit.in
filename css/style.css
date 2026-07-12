@@ -899,15 +899,8 @@ details.toc-fold summary{
   max-width:var(--measure); margin:0 auto;
 }
 
-/* ── Font size controls (reader pages) ── */
-.font-size-controls{
-  display:flex; align-items:center; gap:.3rem;
-  margin-bottom:1.2rem;
-}
-.font-size-label{
-  font-family:var(--ui); font-size:.72rem; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--tea); margin-right:.1rem;
-}
+/* ── Font size controls (settings panel) ── */
+.font-size-controls{ display:flex; align-items:center; gap:.3rem; }
 .font-size-btn{
   background:none; border:1px solid var(--line);
   border-radius:3px; padding:.15rem .45rem;
@@ -917,6 +910,45 @@ details.toc-fold summary{
 }
 .font-size-btn:hover{ background:var(--paper-2); border-color:var(--gold); color:var(--ink); }
 .font-size-btn.active{ background:var(--sindoor); border-color:var(--sindoor); color:#fff; }
+
+/* ── Reader toolbar (floating quick controls while reading) ── */
+#reader-toolbar{
+  position:fixed; bottom:1.4rem; left:0; right:0; z-index:70;
+  margin:0 auto; width:max-content;
+  display:flex; align-items:center; gap:.1rem;
+  background:var(--paper); border:1px solid var(--line);
+  border-radius:2rem; padding:.28rem .44rem;
+  box-shadow:0 2px 16px rgba(41,32,24,.2);
+  opacity:0; pointer-events:none;
+  transform:translateY(.6rem);
+  transition:opacity .22s, transform .22s;
+}
+#reader-toolbar.is-visible{
+  opacity:1; pointer-events:auto; transform:translateY(0);
+}
+.toolbar-btn{
+  background:none; border:none; cursor:pointer;
+  padding:.2rem .48rem; border-radius:1.5rem;
+  font-size:.8rem; font-family:var(--ui); font-weight:600;
+  color:var(--ink-soft); line-height:1.5;
+  transition:background .12s, color .12s;
+}
+.toolbar-btn:hover{ background:var(--paper-2); color:var(--ink); }
+#toolbar-lang-cycle{ color:var(--sindoor); }
+#toolbar-lang-cycle:hover{ background:var(--paper-2); }
+.toolbar-sep{
+  width:1px; height:1.1rem; background:var(--line);
+  margin:0 .15rem; flex-shrink:0; align-self:center;
+}
+/* font-size buttons inside toolbar: no border, use colour for active */
+#reader-toolbar .font-size-btn{
+  border:none; padding:.2rem .48rem; border-radius:1.5rem;
+  background:none;
+}
+#reader-toolbar .font-size-btn:hover{ background:var(--paper-2); border:none; color:var(--ink); }
+#reader-toolbar .font-size-btn.active{
+  background:none; border:none; color:var(--sindoor);
+}
 
 .reader[data-font-size="sm"] .verse,
 .reader[data-font-size="sm"] .prose,
@@ -931,7 +963,7 @@ details.toc-fold summary{
 @media print{
   .site-head, .site-foot, .share-strip,
   #back-top, #read-progress, .toc-fold, .cta-row,
-  #nav-toggle, #settings-toggle, #settings-panel, .skip-link{ display:none !important; }
+  #nav-toggle, #settings-toggle, #settings-panel, #reader-toolbar, .skip-link{ display:none !important; }
   .reader{ grid-template-columns:1fr !important; }
   .piece{ break-inside:avoid; page-break-inside:avoid; }
   body{
