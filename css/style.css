@@ -227,11 +227,9 @@ a:focus-visible, button:focus-visible{
 #nav-toggle svg{ display:block; }
 @media (max-width:700px){
   #nav-toggle{ display:flex; align-items:center; }
-  .lang-switcher{ margin-left:0; order:-1; }
-  #theme-toggle{ order:-1; }
   .brand{ flex:1 1 0; min-width:0; overflow:hidden; }
   .nav-wrap{ display:none; }
-  .nav-wrap.nav-open{ display:block; position:static; overflow:visible; }
+  .nav-wrap.nav-open{ display:block; position:static; overflow:visible; flex:none; width:0; min-width:0; }
   .site-nav{
     flex-direction:column;
     position:absolute; top:100%; left:0; right:0; z-index:49;
