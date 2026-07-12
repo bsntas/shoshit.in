@@ -126,6 +126,16 @@
     }
 
     document.documentElement.lang = lang === 'en' ? 'en' : lang === 'hi' ? 'hi' : 'ne';
+
+    // Sync cycle button
+    var cycleBtn = document.getElementById('lang-cycle');
+    if (cycleBtn) {
+      var LANG_ABBR = { ne: 'ने', en: 'EN', hi: 'हि' };
+      var LANG_NEXT_LABEL = { ne: 'Switch to English', en: 'हिन्दीमा जानुहोस्', hi: 'नेपालीमा जानुहोस्' };
+      cycleBtn.textContent = LANG_ABBR[lang] || lang.toUpperCase();
+      cycleBtn.setAttribute('aria-label', LANG_NEXT_LABEL[lang] || 'Switch language');
+      cycleBtn.setAttribute('title', LANG_NEXT_LABEL[lang] || 'Switch language');
+    }
   }
 
   document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -133,6 +143,16 @@
       applyLanguage(btn.dataset.lang);
     });
   });
+
+  // Cycle button: tap to rotate ne → en → hi → ne
+  var LANG_CYCLE_ORDER = ['ne', 'en', 'hi'];
+  var langCycleBtn = document.getElementById('lang-cycle');
+  if (langCycleBtn) {
+    langCycleBtn.addEventListener('click', function () {
+      var idx = LANG_CYCLE_ORDER.indexOf(currentLang);
+      applyLanguage(LANG_CYCLE_ORDER[(idx + 1) % LANG_CYCLE_ORDER.length]);
+    });
+  }
 
   // Apply on load
   applyLanguage(currentLang);

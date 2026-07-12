@@ -238,6 +238,24 @@ a:focus-visible, button:focus-visible{
   }
 }
 
+/* ── lang-cycle: single-tap language cycle button in mobile header ── */
+#lang-cycle{
+  display:none;
+  background:none; border:1px solid var(--line);
+  border-radius:3px; padding:.18rem .44rem;
+  font-size:.78rem; font-family:var(--ui); font-weight:700;
+  color:var(--ink-soft); cursor:pointer; flex-shrink:0;
+  line-height:1.5; letter-spacing:.02em;
+  transition:background .15s, color .15s, border-color .15s;
+}
+#lang-cycle:hover,
+#lang-cycle:focus-visible{
+  background:var(--paper-2); border-color:var(--gold); color:var(--ink);
+}
+@media (max-width:700px){
+  #lang-cycle{ display:flex; align-items:center; }
+}
+
 /* ── mobile nav hamburger ── */
 #nav-toggle{
   display:none; background:none; border:none; cursor:pointer;
