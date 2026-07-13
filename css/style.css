@@ -1094,3 +1094,19 @@ html[data-font-size="lg"] .parichay-verse{ font-size:1.18rem; }
 }
 .back-to-list:hover{ border-color:var(--sindoor); color:var(--sindoor); }
 
+
+/* ── Developer credit (footer) ── */
+.dev-credit{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:1rem; padding-top:1rem;
+  text-align:center;
+}
+.dev-credit-link{
+  display:inline-flex; align-items:center; gap:.45rem;
+  font-family:var(--ui); font-size:.78rem; color:#536069;
+  text-decoration:none;
+  transition:color .18s;
+}
+.dev-credit-link:hover{ color:var(--gold); text-decoration:none; }
+.dev-credit-logo{ width:20px; height:20px; opacity:.7; }
+.dev-credit-link:hover .dev-credit-logo{ opacity:1; }
