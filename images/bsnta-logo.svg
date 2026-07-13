@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 2475 2475" xmlns="http://www.w3.org/2000/svg" overflow="hidden">
+  <defs>
+    <linearGradient id="bsnta-g" x1="962" y1="2475" x2="3437" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FF0000"/>
+      <stop offset="50%"  stop-color="#00FF00"/>
+      <stop offset="100%" stop-color="#0000FF"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(-962 0)">
+    <path d="M2478.11 835.122 1857.58 1239.91 2475.47 1644.95 1776.5 2047.64 1776.77 427.488 2477.24 835.176 3177.96 1241.04"
+          stroke="url(#bsnta-g)" stroke-width="160.417" stroke-linecap="round" stroke-linejoin="miter" stroke-miterlimit="8" fill="none"/>
+    <circle cx="2200" cy="1237.5" r="1154.57" stroke="url(#bsnta-g)" stroke-width="160.417" fill="none"/>
+  </g>
+</svg>
