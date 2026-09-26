@@ -25,6 +25,18 @@ essays/stories into (copy the pattern from `man-ra-ma.html` for reference — us
 `class="verse"` for poems and `class="prose-flow"` for prose, with a blank line between
 paragraphs).
 
+## EPUB editions
+
+`epub/` holds an EPUB 3 edition of each of the five books (Nepali original text,
+front matter, table of contents, cover and embedded Noto Serif Devanagari font). Each
+book page links to its EPUB from the hero. The EPUBs are generated from the book pages,
+so rebuild them after editing any book text:
+
+```bash
+pip install beautifulsoup4 lxml pillow
+python3 tools/build_epub.py
+```
+
 ## Deploy to GitHub Pages
 
 1. Create a new repository on GitHub (e.g. `shoshit-site`). For a
