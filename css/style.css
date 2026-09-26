@@ -505,6 +505,7 @@ a:focus-visible, button:focus-visible{
   font-size:clamp(2.2rem, 5vw, 3.6rem); line-height:1.4;
 }
 .work-hero .sub{font-family:var(--ui); color:rgba(255,255,255,.85); margin-top:.4rem;}
+.work-hero .hero-dl{margin-top:1rem; font-size:.9rem; padding:.4rem 1.1rem;}
 @media(max-width:600px){.work-hero .hero-cover{width:80px;} .work-hero .wrap{gap:1.4rem;}}
 
 .reader{
@@ -965,7 +966,7 @@ html[data-font-size="lg"] .parichay-verse{ font-size:1.18rem; }
 @media print{
   .site-head, .site-foot, .share-strip,
   #back-top, #read-progress, .toc-fold, .cta-row,
-  #nav-toggle, #settings-toggle, #settings-panel, #reader-toolbar, .skip-link{ display:none !important; }
+  #nav-toggle, #settings-toggle, #settings-panel, #reader-toolbar, .skip-link, .hero-dl{ display:none !important; }
   .reader{ grid-template-columns:1fr !important; }
   .piece{ break-inside:avoid; page-break-inside:avoid; }
   body{
